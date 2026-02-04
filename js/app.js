@@ -113,4 +113,39 @@
         });
     }
 
+    // --- Interactive Infinite Carousel (Mobile) ---
+    const carousel = document.getElementById('mobileStatsCarousel');
+    if (carousel) {
+        let isPaused = false;
+        let animationId;
+        const speed = 0.5; // Adjust for smoothness
+
+        // Infinite Loop Logic
+        const autoScroll = () => {
+            if (!isPaused) {
+                // Determine the midpoint (end of first set)
+                // We assume duplicates are exact copies, so standard content is half of scrollWidth
+                const maxScroll = carousel.scrollWidth / 2;
+                
+                carousel.scrollLeft += speed;
+
+                // Reset to start if we pass the midpoint (seamless loop)
+                // Note: using >= checks if we've scrolled past the first set
+                if (carousel.scrollLeft >= maxScroll) {
+                   carousel.scrollLeft = 0; // Jump back to start instantly
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        };
+
+        // Start Animation
+        animationId = requestAnimationFrame(autoScroll);
+
+        // Pause on User Interaction (Touch or Hover)
+        carousel.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+        carousel.addEventListener('touchend', () => { isPaused = false; });
+        carousel.addEventListener('mouseenter', () => { isPaused = true; });
+        carousel.addEventListener('mouseleave', () => { isPaused = false; });
+    }
+
 })();
