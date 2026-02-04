@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Dr. Juan Tessari - Traumatólogo especialista en Hombro y Rodilla. Cirugía Artroscópica y Tratamientos Regenerativos. Atención en Caballito y Canning.">
+    <meta name="author" content="Dr. Juan Tessari">
+    <meta property="og:title" content="Dr. Juan Tessari - Traumatólogo Especialista">
+    <meta property="og:description" content="Recupera tu movimiento. +2000 Cirugías exitosas. Tratamientos de vanguardia para deportistas y artrosis.">
+    
+    <title>Dr. Juan Tessari | Especialista en Hombro y Rodilla</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", /* Blue from user request */
+                        "secondary": "#1e3a8a",
+                        "accent": "#60a5fa",
+                        "whatsapp": "#25D366",
+                        "navy-dark": "#1e293b",
+                        "navy-deep": "#0f172a",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+        .hero-bg {
+            background-color: #1e293b; 
+        }
+        .pattern-bg {
+             background-color: #475569;
+             background-image:  linear-gradient(30deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(150deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(30deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(150deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(60deg, #475569 25%, transparent 25.5%, transparent 75%, #475569 75%, #475569), linear-gradient(60deg, #475569 25%, transparent 25.5%, transparent 75%, #475569 75%, #475569);
+             background-size: 80px 140px;
+             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+        .play-button-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 2s infinite ease-in-out;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
+    
+    <!-- Header -->
+    <header class="w-full bg-[#1e293b] text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl text-primary">medical_services</span>
+                <h2 class="text-lg font-bold leading-tight">Dr. Juan Tessari</h2>
+            </div>
+            <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
+                Agendar Cita
+            </button>
+        </div>
+    </header>
+
+    <main class="flex flex-col w-full">
+        <!-- Hero Section -->
+        <section class="bg-[#1e293b] w-full pb-20 pt-10 relative">
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-6 mb-12 relative z-10 px-4">
+                <!-- Subtle Badge -->
+                <div class="bg-blue-800/30 border border-blue-500/30 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-md animate-fade-in-up">
+                    ¿Dolor de Rodilla o Hombro?
+                </div>
+
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Recupera tu Movimiento.
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-2xl font-medium">
+                    Cirugía artroscópica y tratamientos regenerativos para <span class="text-white font-bold border-b-2 border-blue-400">volver al deporte sin dolor.</span>
+                </p>
+                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-white px-8 py-3 rounded-lg text-base font-bold shadow-lg hover:bg-blue-600 transition-all">
+                    Reserva tu Turno
+                </button>
+            </div>
+            
+            <div class="max-w-[1000px] mx-auto relative z-10 px-4 flex flex-col gap-8">
+                <!-- Video Container -->
+                <!-- Video Container -->
+                <div id="videoContainer" class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group cursor-pointer bg-black">
+                    <video id="heroVideo" class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-60 transition-all duration-500" autoplay muted loop playsinline poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg">
+                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                    
+                    <!-- Play Overlay -->
+                    <div id="videoOverlay" class="absolute inset-0 flex items-center justify-center transition-opacity duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-full play-button-pulse group-hover:scale-110 transition-transform duration-300">
+                            <div class="bg-white text-primary rounded-full w-20 h-20 flex items-center justify-center shadow-xl">
+                                <span class="material-symbols-outlined text-5xl ml-1 fill-current">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Wrapper: Stacked on Mobile, Block (for Absolute) on Desktop -->
+                <div class="flex flex-col gap-3 md:block">
+                    <!-- Stats 1: Top Left -->
+                    <div class="bg-white rounded-lg p-3 shadow-sm flex items-center gap-3 w-full border border-gray-100 md:absolute md:-top-4 md:-left-12 md:w-auto md:shadow-lg md:border-white/20 md:animate-fade-in-up">
+                        <div class="bg-blue-50 p-1.5 rounded-full text-blue-600">
+                            <span class="material-symbols-outlined text-xl">verified</span>
+                        </div>
+                        <div>
+                            <p class="text-base font-bold text-gray-800 leading-tight">+2000</p>
+                            <p class="text-xs text-gray-500 font-medium leading-tight">Cirugías Exitosas</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats 2: Right Middle -->
+                    <div class="bg-white rounded-lg p-3 shadow-sm flex items-center gap-3 w-full border border-gray-100 md:absolute md:top-1/2 md:-right-16 md:-translate-y-1/2 md:w-auto md:shadow-lg md:border-white/20">
+                        <div class="bg-indigo-50 p-1.5 rounded-full text-indigo-600">
+                            <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                        </div>
+                        <div>
+                            <p class="text-base font-bold text-gray-800 leading-tight">18 Años</p>
+                            <p class="text-xs text-gray-500 font-medium leading-tight">de Trayectoria</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats 3: Bottom Left -->
+                    <div class="bg-white rounded-lg p-3 shadow-sm flex items-center gap-3 w-full border border-gray-100 md:absolute md:-bottom-8 md:left-20 md:w-auto md:shadow-lg md:border-white/20">
+                        <div class="bg-green-50 p-1.5 rounded-full text-green-600">
+                            <span class="material-symbols-outlined text-xl">directions_run</span>
+                        </div>
+                        <div>
+                            <p class="text-base font-bold text-gray-800 leading-tight">Deportista Activo</p>
+                            <p class="text-xs text-gray-500 font-medium leading-tight">Te entiendo mejor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-40 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-background-dark dark:via-background-dark/80 z-0 pointer-events-none"></div>
+        </section>
+
+        <!-- About Section -->
+        <section class="w-full bg-white dark:bg-background-dark py-24 px-6 lg:px-12">
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                            Estimado Paciente,
+                        </h2>
+                        
+                        <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+                            <p class="font-medium text-gray-800 dark:text-gray-100">
+                                Si el dolor de rodilla o hombro te impide disfrutar tu vida...
+                            </p>
+                            <p>
+                                Si has probado kinesiología interminable, infiltraciones que no duran y sentís que nada funciona...
+                            </p>
+                            <p>
+                                Si algún médico te sugirió que <em>"simplemente dejes de hacer deporte"</em> o que <em>"te acostumbres al dolor"</em>...
+                            </p>
+                            <p class="font-bold text-primary text-xl">
+                                Déjame decirte que NO estás solo.
+                            </p>
+                            <p>
+                                Cada semana recibo a deportistas y pacientes frustrados que piensan que su vida activa terminó. Y casi siempre me dicen lo mismo: <strong class="font-bold text-gray-900 dark:text-white">"Doctor, ojalá hubiera venido antes"</strong>.
+                            </p>
+                            <p>
+                                Mi enfoque no es "operar por operar". Es entender tu lesión, aplicar la tecnología más avanzada (Artroscopía o Regenerativa) y devolverte a la cancha, a tu trabajo o a jugar con tus hijos.
+                            </p>
+                            <p class="font-bold text-gray-900 dark:text-white">
+                                Recuperar tu movimiento es posible. Hablemos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="w-full bg-background-light dark:bg-[#0d131a] py-20">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">
+                    Historias de Recuperación
+                </h2>
+                <!-- Using 3 columns for the real testimonials -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Testimony 1 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="flex text-yellow-400 text-sm">
+                            <span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                        </div>
+                        <p class="font-bold text-sm text-gray-800 dark:text-gray-200">Volví a jugar en 3 meses</p>
+                        <div class="aspect-[9/16] rounded-xl overflow-hidden relative group cursor-pointer shadow-md">
+                            <img alt="Testimonio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdYjw7j8esxmOp66qtCCDWtE_dK3ZNSDCVBzf-ugW5UusRpVo_Wkvh3cR3ZimWJtiKze4Q1EG5ThfbRoZYDc4RHEvNummFFQ_MNrAZd7qho2iOwmTkppUy7kSRoQ503kx0UeV7TWuAYTrpjdpiTrFh37Yw2E3tklxOaAICXJNuvsuUk4-xod_aMqzcTcTegCEhFWI2csgcKZuP5gwPlC6s4ZHSv8VQKTM_3eHe0SkoinVbe0kaEm9k12PAZZJumEJ2pxHq4zMMSWKG"/>
+                            <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                                <span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+                            </div>
+                        </div>
+                        <p class="text-xs font-bold text-gray-500">Hombro - Deportista</p>
+                    </div>
+
+                    <!-- Testimony 2 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="flex text-yellow-400 text-sm">
+                            <span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                        </div>
+                        <p class="font-bold text-sm text-gray-800 dark:text-gray-200">Chau dolor de rodilla</p>
+                        <div class="aspect-[9/16] rounded-xl overflow-hidden relative group cursor-pointer shadow-md">
+                            <img alt="Testimonio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyA46nfgUxsO_5OF0COyuM5t_dPiMPW6MB3A5Dm2U_RwXwGKTUBdSRoMIj00b3vaxhFlGI62j-yiXF2m6kj-5Pt-rl0TSjbpOQyWZMC4IGd7pbU_8Em9XgK-lLXXT11cx7XwWsSd0Kp1yA-1oAMVKvkWJ6-noB_y75Tz3vWuJrorwElvIpUtLusW_k47x5qLbqAOnSaccxYuTasW7REZnnBDvxTvasCeD11JwFwLmDl1vUXTf-_0tO4E1YrpqSmLR9cXY6DewA_BR"/>
+                            <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                                <span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+                            </div>
+                        </div>
+                        <p class="text-xs font-bold text-gray-500">Artrosis - 75 años</p>
+                    </div>
+
+                    <!-- Testimony 2 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="flex text-yellow-400 text-sm">
+                            <span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span><span class="material-symbols-outlined text-base fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                        </div>
+                        <p class="font-bold text-sm text-gray-800 dark:text-gray-200">Chau dolor de rodilla</p>
+                        <div class="aspect-[9/16] rounded-xl overflow-hidden relative group cursor-pointer shadow-md">
+                            <img alt="Testimonio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyA46nfgUxsO_5OF0COyuM5t_dPiMPW6MB3A5Dm2U_RwXwGKTUBdSRoMIj00b3vaxhFlGI62j-yiXF2m6kj-5Pt-rl0TSjbpOQyWZMC4IGd7pbU_8Em9XgK-lLXXT11cx7XwWsSd0Kp1yA-1oAMVKvkWJ6-noB_y75Tz3vWuJrorwElvIpUtLusW_k47x5qLbqAOnSaccxYuTasW7REZnnBDvxTvasCeD11JwFwLmDl1vUXTf-_0tO4E1YrpqSmLR9cXY6DewA_BR"/>
+                            <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                                <span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+                            </div>
+                        </div>
+                        <p class="text-xs font-bold text-gray-500">Artrosis - 75 años</p>
+                    </div>
+
+                
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section Replaced/Simplified or Removed? Keeping empty like in design choice or just logos -->
+        <section class="w-full bg-white dark:bg-gray-900 py-10 border-b border-gray-100 dark:border-gray-800">
+             <div class="max-w-[1200px] mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+                 <div class="flex items-center gap-2 font-bold text-lg text-gray-800 dark:text-gray-200 uppercase">
+                     <span class="material-symbols-outlined">verified_user</span> AAOT
+                 </div>
+                 <div class="flex items-center gap-2 font-bold text-lg text-gray-800 dark:text-gray-200 uppercase">
+                    <span class="material-symbols-outlined">verified_user</span> ATOBA
+                </div>
+                 <div class="flex items-center gap-2 font-bold text-lg text-gray-800 dark:text-gray-200 uppercase">
+                     <span class="material-symbols-outlined">verified_user</span> AAA
+                 </div>
+             </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="w-full bg-[#1e293b] py-20 px-6">
+            <div class="max-w-[800px] mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-10 text-left">Preguntas Frecuentes</h2>
+                <div class="flex flex-col gap-4">
+                    <div class="border-b border-gray-700 py-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-lg">
+                                <span>¿Atienden obras sociales?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-gray-400 mt-3 group-open:animate-fadeIn">
+                                Sí, trabajamos con las principales prepagas. Consultanos por WhatsApp.
+                            </div>
+                        </details>
+                    </div>
+                    <div class="border-b border-gray-700 py-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-lg">
+                                <span>¿Operarse es la única opción?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-gray-400 mt-3 group-open:animate-fadeIn">
+                                No. Priorizamos tratamientos conservadores. Operamos solo si es necesario.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use ID Contacto here -->
+        <section id="contacto" class="w-full bg-white dark:bg-[#0f172a] py-24 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                
+                <div class="flex flex-col gap-8">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">Turnos y Consultas</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Elegí la sede más cercana.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CAPITAL FEDERAL (Caballito)</h4>
+                            <p class="font-medium text-gray-700 dark:text-gray-300">Clínica San Camilo</p>
+                            <p class="text-sm text-gray-500">Mahatma Gandhi 572, CABA</p>
+                        </div>
+                        <div class="border-l-4 border-whatsapp pl-4">
+                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CANNING (Provincia Bs As)</h4>
+                            <p class="font-medium text-gray-700 dark:text-gray-300">Centro Médico CIDI</p>
+                            <p class="text-sm text-gray-500">Pedro Dreyer 4655, Canning</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden"></div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+                    <form class="flex flex-col gap-5" id="contactForm">
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email" required type="email"/>
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
+                        
+                        <!-- Added Selects with Tailwind classes -->
+                        <!-- Added Selects with Tailwind classes -->
+                        <div class="relative">
+                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                                <option value="" disabled selected>Seleccioná la Sede</option>
+                                <option value="caballito">📍 CABA: Clínica San Camilo</option>
+                                <option value="canning">📍 Canning: Centro Médico CIDI</option>
+                            </select>
+                        </div>
+
+                        <div class="relative">
+                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                                <option value="" disabled selected>¿Dónde es tu dolor?</option>
+                                <option value="rodilla">Rodilla</option>
+                                <option value="hombro">Hombro</option>
+                                <option value="otro">Otra zona</option>
+                            </select>
+                        </div>
+
+                        <textarea class="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="4"></textarea>
+                        <button class="h-14 w-full rounded-lg bg-primary text-white font-bold text-lg hover:bg-cyan-600 transition-colors shadow-md uppercase tracking-wide">Agendar mi Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full bg-[#0f172a] py-16 text-gray-400">
+            <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-700 pb-12 mb-12">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-2 text-white">
+                        <span class="material-symbols-outlined text-2xl">medical_services</span>
+                        <span class="font-bold text-xl">Dr. Juan Tessari</span>
+                    </div>
+                    <p class="text-sm">Recupera tu movimiento. Potencia tu vida.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest">Ubicación</h4>
+                    <p class="text-sm hover:text-white transition-colors">Caballito (CABA)</p>
+                    <p class="text-sm hover:text-white transition-colors">Canning (GBA)</p>
+                </div>
+            </div>
+            <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>© 2024 Dr. Juan Tessari. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <span>MN 130017</span>
+                    <span>MP 340490</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 isolate animate-bounce-subtle">
+        <!-- Tooltip Bubble (Left) -->
+        <div class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-3 py-2 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700 text-xs font-bold relative max-w-[140px] text-center leading-tight">
+            ¿Tenés dudas? Escribinos
+            <!-- Little triangle tail pointing right -->
+            <div class="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white dark:bg-gray-800 transform rotate-45 border-t border-r border-gray-100 dark:border-gray-700"></div>
+        </div>
+
+        <a href="https://wa.me/5491154230223" target="_blank" class="bg-whatsapp hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform duration-300 group relative ring-4 ring-white/50 dark:ring-black/50">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 16.61c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.14.17-.29.19-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.05-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.07-.11-.24-.18-.49-.31"/>
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
