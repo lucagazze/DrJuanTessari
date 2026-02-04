@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Juan Tessari | Especialista en Hombro y Rodilla</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0038FF", // Reference Blue
+                        "primary-hover": "#002dc0",
+                        "heading": "#000321", // Reference Dark Blue/Black
+                        "body-text": "#565A7C", // Reference Muted Blue/Gray
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E293B",
+                        "text-light": "#565A7C", // Updated to body-text
+                        "text-dark": "#F1F5F9",
+                        "muted-light": "#565A7C",
+                        "muted-dark": "#94A3B8",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #565A7C;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #000321;
+        }
+        .play-button {
+            transition: transform 0.2s ease-in-out;
+        }
+        .video-thumbnail:hover .play-button {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-body-text antialiased transition-colors duration-300">
+    <!-- HERO SECTION -->
+    <section class="pt-8 pb-12 md:pt-16 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <p class="text-primary font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">
+            MÉTODO EXCLUSIVO PARA RECUPERAR TU MOVILIDAD
+        </p>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-thin text-heading mb-6 leading-tight">
+            Soluciones definitivas para Rodilla y Hombro
+        </h1>
+        <p class="text-lg md:text-xl text-body-text mb-10 max-w-3xl mx-auto font-normal">
+            (Tratamientos para volvér al 100% sin dolor 👇)
+        </p>
+        <div class="relative w-full aspect-video bg-gray-900 rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto mb-10 video-thumbnail group cursor-pointer border border-gray-200">
+            <img alt="Dr. Juan Tessari" class="w-full h-full object-cover opacity-60 group-hover:opacity-50 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAchbyZCla0YVHAQZ61kyYGTNcvOvzfvw3Jw8nNK3_LLNfu7mEmJH155QyKc-bBENEXHoQlh5fLuaO810uq1sdgBm-ayeGouyJCMW-Kfl1zxhqtcRc4bvVxTgphqRYj270JDd1uaC5w-k9vl4Yz3KNLljgrVfYsyY0ccKAURcEFXj4xjAlLuiIdT1wnLTX1Wo5yznmVozg3h9-J6AG_jleHSa9wEHz3YL7ElUrvcCt84LDXfenpvjLnMzNiNDM_o8_ymKqLhGiB28Hc"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="play-button bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                    <span class="material-icons text-5xl ml-1">play_arrow</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+            <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary-hover text-white text-xl md:text-2xl font-bold py-5 px-10 rounded-xl shadow-lg transform transition hover:-translate-y-1 w-full md:w-auto">
+                Quiero volver a jugar
+            </button>
+            <p class="text-sm text-muted-light italic">
+                +2000 Cirugías exitosas. 18 Años de Trayectoria.
+            </p>
+        </div>
+    </section>
+
+    <!-- DOCTOR SECTION -->
+    <section class="w-full bg-white py-16 px-6 lg:px-12 border-b border-gray-100">
+        <div class="max-w-3xl mx-auto">
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-heading leading-tight">
+                        Estimado Paciente
+                    </h2>(
+                    
+                    <div class="text-lg text-body-text leading-relaxed space-y-6">
+                        <p class="font-medium text-heading">
+                            Si el dolor de rodilla o hombro te está impidiendo entrenar al 100%...
+                        </p>
+                        <p>
+                            Si ya probaste kinesiología interminable, infiltraciones que duran poco y sentís que nada funciona...
+                        </p>
+                        <p>
+                            Y peor aún, si algún médico te sugirió que <em>"simplemente dejes de hacer tu deporte"</em> o que <em>"te retires y te acostumbres al dolor"</em>...
+                        </p>
+                        
+                        <p class="font-bold text-primary text-xl">
+                            Dejame decirte que NO estás solo.
+                        </p>
+
+                        <p>
+                            Cada semana recibo a deportistas frustrados que piensan que su vida competitiva terminó. Y casi siempre me dicen lo mismo: <strong class="font-bold text-heading">"Doctor, ojalá hubiera venido antes"</strong>.
+                        </p>
+                        <p>
+                            Mi enfoque no es "operar por operar". Es entender tu exigencia, aplicar la tecnología más avanzada (Artroscopía o Regenerativa) y devolverte a la cancha, al gimnasio o a la pista en tu mejor nivel.
+                        </p>
+
+                        <p class="font-bold text-heading text-xl">
+                            Recuperar tu movimiento es posible. Hablemos de tu vuelta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION ("Turnos y Consultas") -->
+    <section id="contacto" class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-4 leading-snug">
+                Turnos y Consultas
+            </h2>
+            <div class="text-center mb-8 space-y-2">
+                <p class="font-bold text-lg text-primary">Agenda tu llamada ahora</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 text-sm text-body-text">
+                    <span>📍 <strong class="text-heading">Caballito (CABA):</strong> Clínica San Camilo</span>
+                    <span>📍 <strong class="text-heading">Canning (GBA):</strong> Centro Médico CIDI</span>
+                </div>
+            </div>
+            
+            <p class="text-center mb-8 text-muted-light">Así será la consulta:</p>
+            <div class="space-y-6 mb-12 text-left">
+                <div class="flex gap-4">
+                    <span class="text-primary font-bold text-xl">1)</span>
+                    <p class="text-body-text">Analizaremos tu historial médico y estudios.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-primary font-bold text-xl">2)</span>
+                    <p class="text-body-text">Evaluaremos opciones conservadoras o quirúrgicas según tu caso.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-primary font-bold text-xl">3)</span>
+                    <p class="text-body-text">Diseñaremos un plan de recuperación a tu medida.</p>
+                </div>
+            </div>
+            <div class="bg-background-light p-6 md:p-8 rounded-2xl shadow-inner border border-gray-200">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-body-text mb-1">Nombre Completo *</label>
+                        <input class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white text-heading shadow-sm focus:border-primary focus:ring-primary py-3" placeholder="Tu nombre y apellido" type="text"/>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-body-text mb-1">E-mail *</label>
+                        <input class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white text-heading shadow-sm focus:border-primary focus:ring-primary py-3" placeholder="tu@email.com" type="email"/>
+                    </div>
+                     <div>
+                        <label class="block text-sm font-medium text-body-text mb-1">Teléfono *</label>
+                        <input class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white text-heading shadow-sm focus:border-primary focus:ring-primary py-3" placeholder="Tu número de teléfono" type="tel"/>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-body-text mb-1">Sede de Preferencia *</label>
+                        <select class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white text-heading shadow-sm focus:border-primary focus:ring-primary py-3">
+                            <option value="">Selecciona una opción</option>
+                            <option value="caballito">📍 CABA: Clínica San Camilo</option>
+                            <option value="canning">📍 Canning: Centro Médico CIDI</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-body-text mb-1">¿Dónde es tu dolor? *</label>
+                        <select class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white text-heading shadow-sm focus:border-primary focus:ring-primary py-3">
+                            <option value="">Selecciona una opción</option>
+                            <option value="rodilla">Rodilla</option>
+                            <option value="hombro">Hombro</option>
+                            <option value="otro">Otra zona</option>
+                        </select>
+                    </div>
+                   
+                    <button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-md shadow-lg transition-all uppercase tracking-wide text-lg mt-4" type="button">
+                        Agendar Cita
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-heading mb-8">
+                Historias de Recuperación
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Video 1 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rg5haehdz2.js" async type="module"></script><style>wistia-player[media-id='rg5haehdz2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rg5haehdz2/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="rg5haehdz2" aspect="0.5625"></wistia-player>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/w7omwyyr9d.js" async type="module"></script><style>wistia-player[media-id='w7omwyyr9d']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w7omwyyr9d/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="w7omwyyr9d" aspect="0.5625"></wistia-player>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/d88c5n6nl6.js" async type="module"></script><style>wistia-player[media-id='d88c5n6nl6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d88c5n6nl6/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="d88c5n6nl6" aspect="0.5625"></wistia-player>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary-hover text-white text-xl font-bold py-5 px-12 rounded-xl shadow-lg transform transition hover:-translate-y-1 w-full md:w-auto">
+                    Agendar Cita
+                </button>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+    <!-- 4. PROBLEM SECTION -->
+    <section class="py-16 max-w-3xl mx-auto px-4 sm:px-6 space-y-24 bg-white">
+        <div class="text-center">
+            <p class="text-primary font-bold uppercase tracking-wider mb-2 text-sm">EL DOLOR ERA CONSTANTE...</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-heading mb-6">"Pensaba que el dolor era para siempre"</h2>
+            <p class="text-body-text mb-8 text-lg leading-relaxed">
+                Muchos pacientes llegan al consultorio después de años de diagnósticos confusos y tratamientos que solo tapan el síntoma temporalmente.
+            </p>
+            <div class="space-y-4 text-left inline-block max-w-xl">
+                <div class="flex items-start gap-3">
+                    <span class="material-icons text-red-500 mt-1">cancel</span>
+                    <p class="text-body-text">Resignación a vivir con dolor crónico.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons text-red-500 mt-1">cancel</span>
+                    <p class="text-body-text">Tratamientos genéricos que no atacan la causa raíz.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons text-red-500 mt-1">error</span>
+                    <p class="text-body-text">Miedo a que la cirugía sea la única salida.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <p class="text-primary font-bold uppercase tracking-wider mb-2 text-sm">CONFUSIÓN MÉDICA...</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-heading mb-6">"Me mareaba con tantos diagnósticos"</h2>
+            <div class="space-y-4 text-left inline-block max-w-xl">
+                 <div class="flex items-start gap-3">
+                    <span class="material-icons text-primary mt-1">check_circle</span>
+                    <p class="text-body-text">Diagnóstico preciso por imagen dinámica.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons text-primary mt-1">check_circle</span>
+                    <p class="text-body-text">Enfoque biomecánico integral.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons text-primary mt-1">check_circle</span>
+                    <p class="text-body-text">Tratamientos regenerativos y artroscopía de avanzada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SOLUTION SECTION ("Cómo podemos ayudarte" - Last) -->
+    <section class="py-20 bg-background-light text-heading">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">
+                ¿Cómo podemos ayudarte a recuperar tu movilidad?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg hover:border-primary transition-colors">
+                    <h3 class="text-2xl font-bold mb-4 text-heading">Cirugía de Mínima Invasión</h3>
+                    <p class="text-body-text leading-relaxed">
+                        Artroscopía de Hombro y Rodilla con tecnología de punta para una recuperación rápida y con menos dolor.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg hover:border-primary transition-colors">
+                    <h3 class="text-2xl font-bold mb-4 text-heading">Tratamientos Regenerativos</h3>
+                    <p class="text-body-text leading-relaxed">
+                        Plasma Rico en Plaquetas (PRP) y Ácido Hialurónico para estimular la curación biológica de los tejidos.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg hover:border-primary transition-colors">
+                    <h3 class="text-2xl font-bold mb-4 text-heading">Rehabilitación Deportiva</h3>
+                    <p class="text-body-text leading-relaxed">
+                        Planes específicos para el retorno al deporte, supervisados para evitar recidivas.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary-hover text-white text-lg font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:-translate-y-1">
+                    Agenda consulta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class="py-12 bg-white border-t border-gray-100 text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="material-icons text-primary text-4xl">medical_services</span>
+            <span class="text-2xl font-black text-heading">Dr. Juan Tessari</span>
+        </div>
+        <p class="text-body-text text-sm">© 2024 Dr. Juan Tessari. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-4 mt-4 text-xs text-gray-400">
+            <span>MN 130017</span>
+            <span>MP 340490</span>
+        </div>
+    </footer>
+</body>
+</html>
