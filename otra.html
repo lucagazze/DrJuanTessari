@@ -7,12 +7,15 @@
     <meta name="author" content="Dr. Juan Tessari">
     <meta property="og:title" content="Dr. Juan Tessari - Traumatólogo Especialista">
     <meta property="og:description" content="Recupera tu movimiento. +2000 Cirugías exitosas. Tratamientos de vanguardia para deportistas y artrosis.">
+    <meta property="og:image" content="https://drjuantessari.com.ar/logosinfondo.webp">
+    <meta property="og:url" content="https://drjuantessari.com.ar">
     
     <title>Dr. Juan Tessari | Especialista en Hombro y Rodilla</title>
+    <link rel="icon" href="logosinfondo.webp" type="image/webp">
     
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -21,17 +24,19 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#3B82F6", /* Blue from user request */
+                        "primary": "#4F46E5", /* Vibrant Indigo */
+                        "primary-dark": "#4338CA",
                         "secondary": "#1e3a8a",
                         "accent": "#60a5fa",
                         "whatsapp": "#25D366",
-                        "navy-dark": "#2A3B55",
-                        "navy-deep": "#0f172a",
+                        "navy-dark": "#0f172a",
+                        "navy-deep": "#020617",
                         "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
+                        "background-dark": "#0f172a",
                     },
                     fontFamily: {
-                        "display": ["Manrope", "sans-serif"]
+                        "display": ["Montserrat", "sans-serif"],
+                        "body": ["Lato", "sans-serif"]
                     },
                     borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
@@ -39,12 +44,12 @@
         }
     </script>
     <style type="text/tailwindcss">
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 14px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
         .hero-bg {
-            background-color: #2A3B55; 
+            background-color: #0f172a; 
         }
         .pattern-bg {
              background-color: #475569;
@@ -67,18 +72,24 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
         }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
     </style>
 </head>
-<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
+<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-body overflow-x-hidden">
     
     <!-- Header -->
-    <header class="w-full bg-[#2A3B55] text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-3xl text-primary">medical_services</span>
-                <h2 class="text-lg font-bold leading-tight">Dr. Juan Tessari</h2>
-            </div>
-            <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
+    <header class="w-full bg-[#0f172a] text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-10 py-2">
+            <a href="#" class="block">
+                <img src="logosinfondo.webp" alt="Dr. Juan Tessari" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity">
+            </a>
+            <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
                 Agendar Cita
             </button>
         </div>
@@ -86,46 +97,48 @@
 
     <main class="flex flex-col w-full">
         <!-- Hero Section -->
-        <section class="bg-[#2A3B55] w-full pt-10 pb-40 md:pb-32 relative">
-            <div class="max-w-4xl mx-auto flex flex-col items-center gap-6 mb-14 relative z-10 px-4">
+        <section class="bg-[#0f172a] w-full pt-6 pb-40 md:pb-32 relative">
+            <div class="max-w-6xl mx-auto flex flex-col items-center gap-8 mb-16 relative z-10 px-4">
                 <!-- Subtle Badge -->
                 <div class="bg-blue-800/30 border border-blue-500/30 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-md animate-fade-in-up">
                     Especialista en Rodilla y Hombro
                 </div>
 
-                <h1 class="text-white text-3xl md:text-6xl font-bold  leading-tight text-center">
+                <h1 class="text-white text-3xl md:text-5xl font-semibold font-display leading-tight text-center">
                     Soluciones definitivas para Rodilla y Hombro
                 </h1>
                 <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center">
-                    Tratamientos para <span class="text-white border-b-2 border-blue-400">volvér al 100% sin dolor.</span>
+                    (Tratamientos para <span class="text-white border-b-2 border-blue-400">volvér al 100% sin dolor.</span>👇)
                 </p>
-                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="self-center bg-primary text-white px-8 py-3 rounded-lg text-base font-bold shadow-lg hover:bg-blue-600 transition-all uppercase tracking-wide mt-4">
-                    Quiero volver a jugar
-                </button>
+                
+                <!-- Desktop Button (Restored Position) -->
+                <div class="hidden md:block mt-2 animate-fade-in-up">
+                     <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-white py-4 px-10 rounded-lg text-lg font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide hover:scale-105 active:scale-95">
+                        Agendar una Consulta
+                    </button>
+                </div>
             </div>
             
             <div class="max-w-[1000px] mx-auto relative z-20 px-4 flex flex-col gap-8 mb-[-4rem] md:mb-[-8rem]">
                 <!-- Video Container -->
                 <!-- Video Container -->
-                <div id="videoContainer" class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group cursor-pointer bg-black">
-                    <video id="heroVideo" class="w-full h-full object-cover object-center opacity-80 group-hover:opacity-60 transition-all duration-500" autoplay muted loop playsinline poster="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg">
-                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                    
-                    <!-- Play Overlay -->
-                    <div id="videoOverlay" class="absolute inset-0 flex items-center justify-center transition-opacity duration-300">
-                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-full play-button-pulse group-hover:scale-110 transition-transform duration-300">
-                            <div class="bg-white text-primary rounded-full w-20 h-20 flex items-center justify-center shadow-xl">
-                                <span class="material-symbols-outlined text-5xl ml-1 fill-current">play_arrow</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Image Container -->
+                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg" 
+                         alt="Dr. Juan Tessari" 
+                         class="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity duration-700">
+                </div>
+                
+                <!-- Mobile Button Only -->
+                <div class="flex justify-center w-full mt-8 md:hidden">
+                    <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
+                        Agendar una Consulta
+                    </button>
                 </div>
 
                 <!-- Mobile Infinite Marquee -->
                 <div class="mt-2 relative w-full overflow-hidden md:hidden mask-gradient-x">
-                    <div class="flex w-max animate-scroll gap-4">
+                    <div class="flex w-max animate-scroll gap-4 pr-4">
                         <!-- Originals -->
                         <div class="bg-white rounded-lg p-2 shadow-sm flex items-center gap-2 border border-gray-100 min-w-[160px]">
                             <div class="bg-blue-50 p-1 rounded-full text-blue-600">
@@ -221,15 +234,16 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-40 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-background-dark dark:via-background-dark/80 z-0 pointer-events-none"></div>
+
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-24 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-background-dark dark:via-background-dark/80 z-0 pointer-events-none"></div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Section (Restored Position) -->
         <section class="w-full bg-white dark:bg-background-dark py-24 px-6 lg:px-12">
             <div class="max-w-3xl mx-auto">
                 <div class="space-y-8">
                     <div class="space-y-6">
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                        <h2 class="text-3xl md:text-4xl font-extrabold font-display text-gray-900 dark:text-white leading-tight">
                             Estimado Paciente
                         </h2>
                         
@@ -264,30 +278,34 @@
             </div>
         </section>
 
+
+
         <!-- Testimonials -->
         <section class="w-full bg-background-light dark:bg-[#0d131a] py-20">
             <div class="max-w-[1400px] mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-center text-gray-800 dark:text-white mb-8">
                     Historias de Recuperación
                 </h2>
                 <!-- Using 3 columns for the real testimonials -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 md:gap-16 max-w-5xl mx-auto">
                     
                     <!-- Video 1 -->
                     <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rg5haehdz2.js" async type="module"></script><style>wistia-player[media-id='rg5haehdz2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rg5haehdz2/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="rg5haehdz2" aspect="0.5625"></wistia-player>
                     </div>
 
-                    <!-- Video 2 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
-                        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>
-                    </div>
+                   
 
                     <!-- Video 3 -->
                     <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/w7omwyyr9d.js" async type="module"></script><style>wistia-player[media-id='w7omwyyr9d']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w7omwyyr9d/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="w7omwyyr9d" aspect="0.5625"></wistia-player>
                     </div>
 
+                     <!-- Video 2 -->
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>
+                    </div>
+                    
                     <!-- Video 4 -->
                     <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/d88c5n6nl6.js" async type="module"></script><style>wistia-player[media-id='d88c5n6nl6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d88c5n6nl6/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="d88c5n6nl6" aspect="0.5625"></wistia-player>
@@ -299,10 +317,68 @@
         </section>
 
 
+          <!-- Use ID Contacto here -->
+        <section id="contacto" class="w-full bg-white dark:bg-[#0f172a] py-24 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                
+                <div class="flex flex-col gap-8">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-display text-gray-900 dark:text-white leading-tight">Turnos y Consultas</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        Elegí la sede más cercana.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CAPITAL FEDERAL (Caballito)</h4>
+                            <p class="font-medium text-gray-700 dark:text-gray-300">Clínica San Camilo</p>
+                            <p class="text-sm text-gray-500">Mahatma Gandhi 572, CABA</p>
+                        </div>
+                        <div class="border-l-4 border-whatsapp pl-4">
+                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CANNING (Provincia Bs As)</h4>
+                            <p class="font-medium text-gray-700 dark:text-gray-300">Centro Médico CIDI</p>
+                            <p class="text-sm text-gray-500">Pedro Dreyer 4655, Canning</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden"></div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+                    <form class="flex flex-col gap-5" id="contactForm">
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email" required type="email"/>
+                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
+                        
+                        <!-- Added Selects with Tailwind classes -->
+                        <!-- Added Selects with Tailwind classes -->
+                        <div class="relative">
+                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                                <option value="" disabled selected>Seleccioná la Sede</option>
+                                <option value="caballito">📍 CABA: Clínica San Camilo</option>
+                                <option value="canning">📍 Canning: Centro Médico CIDI</option>
+                            </select>
+                        </div>
+
+                        <div class="relative">
+                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                                <option value="" disabled selected>¿Dónde es tu dolor?</option>
+                                <option value="rodilla">Rodilla</option>
+                                <option value="hombro">Hombro</option>
+                                <option value="otro">Otra zona</option>
+                            </select>
+                        </div>
+
+                        <textarea class="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="4"></textarea>
+                        <button class="h-14 w-full rounded-lg bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-colors shadow-md uppercase tracking-wide">Agendar mi Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ -->
-        <section class="w-full bg-[#2A3B55] py-20 px-6">
+        <section class="w-full bg-[#0f172a] py-20 px-6">
             <div class="max-w-[800px] mx-auto">
-                <h2 class="text-3xl font-bold text-white mb-10 text-left">Preguntas Frecuentes</h2>
+                <h2 class="text-3xl font-bold font-display text-white mb-10 text-left">Preguntas Frecuentes</h2>
                 <div class="flex flex-col gap-4">
                     <div class="border-b border-gray-700 py-4">
                         <details class="group">
@@ -362,87 +438,37 @@
             </div>
         </section>
 
-        <!-- Use ID Contacto here -->
-        <section id="contacto" class="w-full bg-white dark:bg-[#0f172a] py-24 border-t border-gray-100 dark:border-gray-800">
-            <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-                
-                <div class="flex flex-col gap-8">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">Turnos y Consultas</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400">
-                        Elegí la sede más cercana.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CAPITAL FEDERAL (Caballito)</h4>
-                            <p class="font-medium text-gray-700 dark:text-gray-300">Clínica San Camilo</p>
-                            <p class="text-sm text-gray-500">Mahatma Gandhi 572, CABA</p>
-                        </div>
-                        <div class="border-l-4 border-whatsapp pl-4">
-                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CANNING (Provincia Bs As)</h4>
-                            <p class="font-medium text-gray-700 dark:text-gray-300">Centro Médico CIDI</p>
-                            <p class="text-sm text-gray-500">Pedro Dreyer 4655, Canning</p>
-                        </div>
+      
+
+       
+
+        <!-- Sobre Mí Section (New) -->
+        <section class="w-full bg-background-light dark:bg-[#0d131a] py-24 px-6 lg:px-12 border-t border-gray-200 dark:border-gray-800">
+            <div class="max-w-5xl mx-auto flex flex-col-reverse gap-8 md:grid md:grid-cols-2 md:gap-12 items-center">
+                <!-- Text -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-display text-gray-900 dark:text-white leading-tight">
+                        Sobre el Dr. Juan Tessari
+                    </h2>
+                    <div class="text-base text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+                       <p class="font-medium text-lg text-primary">Traumatólogo Especialista en Hombro, Rodilla y Artroscopía.</p>
+                       <p>Con <strong class="text-gray-900 dark:text-white">más de 18 años de experiencia</strong>, lidero un equipo enfocado en devolver la calidad de vida a mis pacientes, combinando <strong class="text-gray-900 dark:text-white">experiencia quirúrgica con calidez humana</strong>.</p>
+                       <p>Me formé en los centros más prestigiosos del país y continúo actualizándome constantemente en las <strong class="text-gray-900 dark:text-white">últimas técnicas regenerativas</strong> y quirúrgicas mínimamente invasivas para ofrecerte siempre la mejor opción.</p>
+                       <p>Mi compromiso es brindarte un <strong class="text-gray-900 dark:text-white">diagnóstico preciso, claro y un plan de tratamiento honesto</strong>, ya sea para volver al deporte de alto rendimiento o simplemente para vivir tu día a día sin dolor.</p>
                     </div>
-
-                    <div class="hidden"></div>
+                     <div class="pt-4 flex flex-wrap gap-3">
+                        <span class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-gray-100 dark:border-gray-700">MN 123456</span>
+                         <span class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-gray-100 dark:border-gray-700">Miembro AAOT</span>
+                         <span class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-gray-100 dark:border-gray-700">Cirujano Artroscopista</span>
+                    </div>
                 </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
-                    <form class="flex flex-col gap-5" id="contactForm">
-                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
-                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email" required type="email"/>
-                        <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
-                        
-                        <!-- Added Selects with Tailwind classes -->
-                        <!-- Added Selects with Tailwind classes -->
-                        <div class="relative">
-                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
-                                <option value="" disabled selected>Seleccioná la Sede</option>
-                                <option value="caballito">📍 CABA: Clínica San Camilo</option>
-                                <option value="canning">📍 Canning: Centro Médico CIDI</option>
-                            </select>
-                        </div>
-
-                        <div class="relative">
-                             <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
-                                <option value="" disabled selected>¿Dónde es tu dolor?</option>
-                                <option value="rodilla">Rodilla</option>
-                                <option value="hombro">Hombro</option>
-                                <option value="otro">Otra zona</option>
-                            </select>
-                        </div>
-
-                        <textarea class="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="4"></textarea>
-                        <button class="h-14 w-full rounded-lg bg-primary text-white font-bold text-lg hover:bg-cyan-600 transition-colors shadow-md uppercase tracking-wide">Agendar mi Consulta</button>
-                    </form>
+                <!-- Image -->
+                <div class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl group border-4 border-white dark:border-gray-700">
+                     <img src="doctor.jpg" alt="Dr. Juan Tessari" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
         </section>
 
-        <footer class="w-full bg-[#0f172a] py-16 text-gray-400">
-            <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-700 pb-12 mb-12">
-                <div class="flex flex-col gap-6">
-                    <div class="flex items-center gap-2 text-white">
-                        <span class="material-symbols-outlined text-2xl">medical_services</span>
-                        <span class="font-bold text-xl">Dr. Juan Tessari</span>
-                    </div>
-                    <p class="text-sm">Recupera tu movimiento. Potencia tu vida.</p>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <h4 class="text-white font-bold uppercase text-xs tracking-widest">Ubicación</h4>
-                    <p class="text-sm hover:text-white transition-colors">Caballito (CABA)</p>
-                    <p class="text-sm hover:text-white transition-colors">Canning (GBA)</p>
-                </div>
-            </div>
-            <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-                <p>© 2024 Dr. Juan Tessari. Todos los derechos reservados.</p>
-                <div class="flex gap-4">
-                    <span>MN 130017</span>
-                    <span>MP 340490</span>
-                </div>
-            </div>
-        </footer>
     </main>
 
     <!-- Floating WhatsApp Button -->
