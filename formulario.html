@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solicitar Turno | Dr. Juan Tessari</title>
+    <link rel="icon" href="logosinfondo.webp" type="image/webp">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563eb",
+                        "primary-dark": "#1d4ed8",
+                        "secondary": "#1e3a8a",
+                        "accent": "#60a5fa",
+                        "whatsapp": "#25D366",
+                        "navy-dark": "#0f172a",
+                        "navy-deep": "#020617",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"],
+                        "body": ["Lato", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#0f172a] text-[#111418] dark:text-white font-body min-h-screen flex flex-col">
+
+
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        
+        <!-- Contenedor Principal -->
+        <div class="w-full max-w-lg">
+
+            <!-- PASO 1: Confirmación -->
+            <div id="step-confirmation" class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 text-center space-y-8 animate-fade-in-up">
+                <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto text-primary">
+                    <span class="material-symbols-outlined text-4xl">calendar_add_on</span>
+                </div>
+                
+                <h1 class="text-2xl md:text-3xl font-extrabold font-display text-gray-900 dark:text-white leading-tight">
+                    Solicitud de Turno
+                </h1>
+                
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    Estás a un paso de agendar tu consulta. Por favor, confirmá que querés iniciar el proceso.
+                </p>
+
+                <button onclick="showForm()" class="w-full bg-primary hover:bg-primary-dark text-white py-4 px-8 rounded-xl text-lg font-bold shadow-lg transition-all transform hover:scale-105 active:scale-95 uppercase tracking-wide">
+                    Comenzar Solicitud
+                </button>
+                
+
+            </div>
+
+            <!-- PASO 2: Formulario (Oculto inicialmente) -->
+            <div id="step-form" class="hidden bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative animate-fade-in-up">
+
+
+                <p class="text-base md:text-lg font-bold text-black dark:text-white text-center mb-6">
+                    Rellena el formulario y te contestamos antes de las 24 horas. 👇
+                </p>
+                
+                <form class="flex flex-col gap-5" id="contactForm" onsubmit="handleSubmit(event)">
+                    <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
+                    <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email" required type="email"/>
+                    <input class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
+                    
+                    <div class="relative">
+                         <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                            <option value="" disabled selected>Seleccioná la Sede</option>
+                            <option value="caballito">📍 CABA: Clínica San Camilo</option>
+                            <option value="canning">📍 Canning: Centro Médico CIDI</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                         <select class="h-12 w-full rounded-lg border-gray-200 bg-white px-4 pr-10 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                            <option value="" disabled selected>¿Dónde es tu dolor?</option>
+                            <option value="rodilla">Rodilla</option>
+                            <option value="hombro">Hombro</option>
+                            <option value="otro">Otra zona</option>
+                        </select>
+                    </div>
+
+                    <textarea class="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="4"></textarea>
+                    <button type="submit" class="h-14 w-full rounded-lg bg-primary text-white font-bold text-base hover:bg-primary-dark transition-colors shadow-md uppercase tracking-wide flex items-center justify-center gap-2">
+                        <span>Enviar Solicitud</span>
+                    </button>
+                    <p class="text-xs text-center text-gray-400 mt-2">Te responderemos a la brevedad.</p>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function showForm() {
+            document.getElementById('step-confirmation').classList.add('hidden');
+            document.getElementById('step-form').classList.remove('hidden');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            // Loading state
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Enviando...';
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            // Simulate server request
+            setTimeout(() => {
+                // Success! Redirect to index
+                window.location.href = 'index.html';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
