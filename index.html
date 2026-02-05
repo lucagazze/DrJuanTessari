@@ -57,52 +57,10 @@
              background-size: 80px 140px;
              background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
         }
-        .play-button-pulse {
-            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-        }
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-        .animate-bounce-subtle {
-            animation: bounce-subtle 2s infinite ease-in-out;
-        }
-        @keyframes bounce-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-            animation: scroll 20s linear infinite;
-        }
         @media (min-width: 768px) {
             html {
                 font-size: 15px;
             }
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-100 { transition-delay: 0.1s; animation-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; animation-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; animation-delay: 0.3s; }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
@@ -129,10 +87,10 @@
                     Especialista en Rodilla y Hombro
                 </div>
 
-                <h1 class="text-white text-3xl md:text-[2.75rem] font-bold tracking-tight leading-tight text-center animate-fade-in-up">
+                <h1 class="text-white text-3xl md:text-[2.75rem] font-bold tracking-tight leading-tight text-center">
                     Soluciones definitivas para Rodilla y Hombro
                 </h1>
-                <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center animate-fade-in-up delay-100">
+                <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center">
                     (Tratamientos para <span class="text-white border-b-2 border-blue-400">volvér al 100% sin dolor.</span>👇)
                 </p>
                 
@@ -148,7 +106,7 @@
                 <!-- Video Container -->
                 <!-- Video Container -->
                 <!-- Image Container -->
-                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black animate-fade-in-up delay-200">
+                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg" 
                          alt="Dr. Juan Tessari" 
                          class="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity duration-700">
@@ -216,7 +174,7 @@
                             Estimado Paciente
                         </h2>
                         
-                        <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 reveal">
+                        <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6">
                             <p class="font-medium text-gray-800 dark:text-gray-100">
                                 Si el dolor de rodilla o hombro te está impidiendo entrenar al 100%...
                             </p>
@@ -259,24 +217,24 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-[1400px] mx-auto">
                     
                     <!-- Video 1 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rg5haehdz2.js" async type="module"></script><style>wistia-player[media-id='rg5haehdz2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rg5haehdz2/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="rg5haehdz2" aspect="0.5625"></wistia-player>
                     </div>
 
                    
 
                     <!-- Video 3 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-100">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/w7omwyyr9d.js" async type="module"></script><style>wistia-player[media-id='w7omwyyr9d']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w7omwyyr9d/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="w7omwyyr9d" aspect="0.5625"></wistia-player>
                     </div>
 
                      <!-- Video 2 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-200">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>
                     </div>
                     
                     <!-- Video 4 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-300">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/d88c5n6nl6.js" async type="module"></script><style>wistia-player[media-id='d88c5n6nl6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d88c5n6nl6/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="d88c5n6nl6" aspect="0.5625"></wistia-player>
                     </div>
 
@@ -379,7 +337,7 @@
             <div class="max-w-[800px] mx-auto">
                 <h2 class="text-3xl md:text-3xl font-bold tracking-tight text-white mb-10 text-left">Preguntas Frecuentes</h2>
                 <div class="flex flex-col gap-4">
-                    <div class="border-b border-gray-700 py-5 reveal">
+                    <div class="border-b border-gray-700 py-5">
                         <details class="group">
                             <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-lg md:text-xl">
                                 <span>¿Atienden obras sociales?</span>
@@ -448,7 +406,7 @@
                     <!-- Decor element -->
                     <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary opacity-10 rounded-full blur-3xl"></div>
                     
-                    <div class="relative z-10 space-y-8 reveal">
+                    <div class="relative z-10 space-y-8">
                         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white leading-tight">
                             ¿Estás listo para dar el primer paso?
                         </h2>
@@ -488,7 +446,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <div class="fixed bottom-3 md:bottom-10 right-6 md:right-10 z-50 flex items-center gap-3 isolate animate-bounce-subtle">
+    <div class="fixed bottom-3 md:bottom-10 right-6 md:right-10 z-50 flex items-center gap-3 isolate">
         <!-- Tooltip Bubble (Left) -->
         <div class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-3 py-2 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700 text-xs font-bold relative max-w-[200px] text-center leading-tight">
 Reservar Cita            <!-- Little triangle tail pointing right -->
@@ -502,27 +460,6 @@ Reservar Cita            <!-- Little triangle tail pointing right -->
         </a>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.reveal').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 </html>
