@@ -79,6 +79,18 @@
         .animate-scroll {
             animation: scroll 20s linear infinite;
         }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
     </style>
 </head>
 <body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-body overflow-x-hidden">
@@ -100,19 +112,19 @@
         <section class="bg-[#0f172a] w-full pt-12 md:pt-20 pb-20 md:pb-24 relative">
             <div class="max-w-6xl mx-auto flex flex-col items-center gap-8 mb-16 relative z-10 px-4">
                 <!-- Subtle Badge -->
-                <div class="bg-blue-800/30 border border-blue-500/30 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-md animate-fade-in-up">
+                <div class="bg-blue-800/30 border border-blue-500/30 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-md animate-fade-in-up reveal">
                     Especialista en Rodilla y Hombro
                 </div>
 
-                <h1 class="text-white text-3xl md:text-5xl font-bold tracking-tight leading-tight text-center">
+                <h1 class="text-white text-3xl md:text-5xl font-bold tracking-tight leading-tight text-center reveal delay-100">
                     Soluciones definitivas para Rodilla y Hombro
                 </h1>
-                <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center">
+                <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center reveal delay-200">
                     (Tratamientos para <span class="text-white border-b-2 border-blue-400">volvér al 100% sin dolor.</span>👇)
                 </p>
                 
                 <!-- Desktop Button (Restored Position) -->
-                <div class="hidden md:block mt-8 animate-fade-in-up">
+                <div class="hidden md:block mt-8 animate-fade-in-up reveal delay-300">
                      <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-white py-3.5 px-9 rounded-lg text-lg font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide hover:scale-105 active:scale-95">
                         Agendar una Consulta
                     </button>
@@ -123,14 +135,14 @@
                 <!-- Video Container -->
                 <!-- Video Container -->
                 <!-- Image Container -->
-                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black">
+                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black reveal delay-200">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg" 
                          alt="Dr. Juan Tessari" 
                          class="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity duration-700">
                 </div>
                 
                 <!-- Mobile Button Only -->
-                <div class="flex flex-col items-center w-full mt-8 mb-12 md:hidden gap-3">
+                <div class="flex flex-col items-center w-full mt-8 mb-12 md:hidden gap-3 reveal delay-100">
                     <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
                         Agendar una Consulta
                     </button>
@@ -145,7 +157,7 @@
                 <!-- Desktop Absolute Stats -->
                 <div class="hidden md:block">
                     <!-- Stats 1: Top Left -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -top-4 -left-12 animate-fade-in-up">
+                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -top-4 -left-12 animate-fade-in-up reveal delay-100">
                         <div class="bg-blue-50 p-1.5 rounded-full text-blue-600">
                             <span class="material-symbols-outlined text-xl">verified</span>
                         </div>
@@ -156,7 +168,7 @@
                     </div>
                     
                     <!-- Stats 2: Right Middle -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute top-1/2 -right-16 -translate-y-1/2 animate-fade-in-up delay-100">
+                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute top-1/2 -right-16 -translate-y-1/2 animate-fade-in-up delay-100 reveal delay-200">
                         <div class="bg-indigo-50 p-1.5 rounded-full text-indigo-600">
                             <span class="material-symbols-outlined text-xl">workspace_premium</span>
                         </div>
@@ -167,7 +179,7 @@
                     </div>
                     
                     <!-- Stats 3: Bottom Left -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -bottom-8 left-20 animate-fade-in-up delay-200">
+                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -bottom-8 left-20 animate-fade-in-up delay-200 reveal delay-300">
                         <div class="bg-green-50 p-1.5 rounded-full text-green-600">
                             <span class="material-symbols-outlined text-xl">directions_run</span>
                         </div>
@@ -191,7 +203,7 @@
                             Estimado Paciente
                         </h2>
                         
-                        <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6">
+                        <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 reveal">
                             <p class="font-medium text-gray-800 dark:text-gray-100">
                                 Si el dolor de rodilla o hombro te está impidiendo entrenar al 100%...
                             </p>
@@ -234,24 +246,24 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-[1400px] mx-auto">
                     
                     <!-- Video 1 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rg5haehdz2.js" async type="module"></script><style>wistia-player[media-id='rg5haehdz2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rg5haehdz2/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="rg5haehdz2" aspect="0.5625"></wistia-player>
                     </div>
 
                    
 
                     <!-- Video 3 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-100">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/w7omwyyr9d.js" async type="module"></script><style>wistia-player[media-id='w7omwyyr9d']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/w7omwyyr9d/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="w7omwyyr9d" aspect="0.5625"></wistia-player>
                     </div>
 
                      <!-- Video 2 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-200">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>
                     </div>
                     
                     <!-- Video 4 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
+                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 reveal delay-300">
                         <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/d88c5n6nl6.js" async type="module"></script><style>wistia-player[media-id='d88c5n6nl6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d88c5n6nl6/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="d88c5n6nl6" aspect="0.5625"></wistia-player>
                     </div>
 
@@ -354,7 +366,7 @@
             <div class="max-w-[800px] mx-auto">
                 <h2 class="text-3xl font-bold font-display text-white mb-10 text-left">Preguntas Frecuentes</h2>
                 <div class="flex flex-col gap-4">
-                    <div class="border-b border-gray-700 py-4">
+                    <div class="border-b border-gray-700 py-4 reveal">
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-lg">
                                 <span>¿Atienden obras sociales?</span>
@@ -423,7 +435,7 @@
                     <!-- Decor element -->
                     <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary opacity-10 rounded-full blur-3xl"></div>
                     
-                    <div class="relative z-10 space-y-8">
+                    <div class="relative z-10 space-y-8 reveal">
                         <h2 class="text-2xl md:text-3xl font-bold font-display text-white leading-tight">
                             ¿Estás listo para dar el primer paso?
                         </h2>
@@ -476,5 +488,28 @@ Reservar cita            <!-- Little triangle tail pointing right -->
             </svg>
         </a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
