@@ -86,9 +86,14 @@
 
             <!-- PASO 2: Formulario (Oculto inicialmente) -->
             <div id="step-form" class="hidden bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative animate-fade-in-up">
+                
+                <div class="absolute top-4 left-4 cursor-pointer text-gray-400 hover:text-gray-600 flex items-center gap-1" onclick="showConfirmation()">
+                    <span class="material-symbols-outlined text-base">arrow_back</span>
+                    <span class="text-sm font-medium">Volver</span>
+                </div>
 
 
-                <p class="text-base md:text-lg font-bold text-black dark:text-white text-center mb-6">
+                <p class="text-base md:text-lg font-bold text-black dark:text-white text-center mb-6 mt-4">
                     Rellena el formulario y te contestamos antes de las 24 horas. 👇
                 </p>
                 
@@ -129,6 +134,11 @@
         function showForm() {
             document.getElementById('step-confirmation').classList.add('hidden');
             document.getElementById('step-form').classList.remove('hidden');
+        }
+
+        function showConfirmation() {
+            document.getElementById('step-form').classList.add('hidden');
+            document.getElementById('step-confirmation').classList.remove('hidden');
         }
 
         function handleSubmit(event) {
