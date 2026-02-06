@@ -59,9 +59,12 @@
              background-size: 80px 140px;
              background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
         }
+        html {
+            font-size: 15px;
+        }
         @media (min-width: 768px) {
             html {
-                font-size: 15px;
+                font-size: 16px;
             }
         }
     </style>
@@ -99,7 +102,7 @@
                 
                 <!-- Desktop Button (Restored Position) -->
                 <div class="hidden md:block mt-8">
-                     <button onclick="window.location.href='formulario.html'" class="bg-primary text-white py-3.5 px-9 rounded-lg text-lg font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide hover:scale-105 active:scale-95">
+                     <button onclick="window.location.href='formulario.html'" class="bg-primary text-white py-3 px-8 rounded-lg text-base font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide hover:scale-105 active:scale-95">
                         Agendar una Consulta
                     </button>
                 </div>
@@ -249,26 +252,33 @@
 
           <!-- Use ID Contacto here -->
         <section id="contacto" class="w-full bg-white dark:bg-[#0f172a] py-24 md:py-36 border-t border-gray-100 dark:border-gray-800">
-            <div class="max-w-[1050px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2  gap-8 lg:gap-0 items-start">
+            <div class="max-w-[1050px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 
                 <div class="flex flex-col gap-8">
-                    <h2 class="text-3xl md:text-3xl font-bold tracking-tight font-display text-gray-900 dark:text-white leading-tight">Turnos y Consultas</h2>
+                    <h2 class="text-3xl md:text-3xl font-bold tracking-tight font-display text-gray-900 dark:text-white leading-tight">
+                        Videoconsultas: <span class="text-primary">Diagnóstico experto desde tu casa</span>
+                    </h2>
 
-                    
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-primary pl-4">
-                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CAPITAL FEDERAL (Caballito)</h4>
-                            <p class="font-medium text-gray-700 dark:text-gray-300">Clínica San Camilo</p>
-                            <p class="text-sm text-gray-500">Mahatma Gandhi 572, CABA</p>
-                        </div>
-                        <div class="border-l-4 border-whatsapp pl-4">
-                            <h4 class="font-bold text-navy-dark dark:text-white">📍 CANNING (Provincia Bs As)</h4>
-                            <p class="font-medium text-gray-700 dark:text-gray-300">Centro Médico CIDI</p>
-                            <p class="text-sm text-gray-500">Pedro Dreyer 4655, Canning</p>
-                        </div>
+                    <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+                        <p>
+                            La tecnología hoy nos permite acortar distancias sin perder calidad médica. A través de una videollamada, puedo evaluar tu caso, revisar tus estudios (resonancias, radiografías) y definir el mejor tratamiento.
+                        </p>
+                        
+                        <ul class="space-y-4 mt-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                                <span><strong>Sin traslados:</strong> Ahorrá tiempo y evitá salas de espera.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                                <span><strong>Misma validez:</strong> Ideal para segundas opiniones y planificación quirúrgica.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                                <span><strong>Examen físico:</strong> Si es indispensable tocar la zona, coordinamos una visita presencial prioritaria.</span>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="hidden"></div>
                 </div>
                 
                 <div class="bg-white dark:bg-gray-800 p-8 lg:p-12 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative flex flex-col justify-center items-center text-center">
@@ -334,7 +344,7 @@
                                     <span class="material-symbols-outlined">expand_more</span>
                                 </span>
                             </summary>
-                            <div class="text-gray-300 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
+                            <div class="text-gray-100 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
                                 Sí, trabajamos con las principales prepagas. Consultanos por WhatsApp.
                             </div>
                         </details>
@@ -347,7 +357,7 @@
                                     <span class="material-symbols-outlined">expand_more</span>
                                 </span>
                             </summary>
-                            <div class="text-gray-300 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
+                            <div class="text-gray-100 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
                                 No. Priorizamos tratamientos conservadores. Operamos solo si es necesario.
                             </div>
                         </details>
@@ -361,7 +371,7 @@
                                     <span class="material-symbols-outlined">expand_more</span>
                                 </span>
                             </summary>
-                            <div class="text-gray-300 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
+                            <div class="text-gray-100 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
                                 Depende de cada caso y tratamiento. Con técnicas modernas, buscamos que vuelvas a tu actividad lo antes posible.
                             </div>
                         </details>
@@ -375,7 +385,7 @@
                                     <span class="material-symbols-outlined">expand_more</span>
                                 </span>
                             </summary>
-                            <div class="text-gray-300 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
+                            <div class="text-gray-100 mt-4 text-base md:text-lg leading-relaxed group-open:animate-fadeIn">
                                 Aceptamos efectivo, transferencias y tarjetas. Consultanos por las opciones de financiación.
                             </div>
                         </details>
