@@ -13,7 +13,7 @@
     
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -34,7 +34,8 @@
                     },
                     fontFamily: {
                         "display": ["Helvetica", "Arial", "sans-serif"],
-                        "body": ["Helvetica", "Arial", "sans-serif"]
+                        "body": ["Helvetica", "Arial", "sans-serif"],
+                        "cursive": ["Playfair Display", "serif"],
                     },
                 },
             },
@@ -65,14 +66,14 @@
                 </p>
 
                 <div class="space-y-3 md:space-y-4 max-w-md mx-auto">
-                    <button onclick="showForm()" class="w-full bg-primary hover:bg-primary-dark text-white h-12 md:h-14 px-4 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-2">
+                    <button onclick="selectVideoconsulta()" class="w-full bg-primary hover:bg-primary-dark text-white h-12 md:h-14 px-4 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-2">
                         <span class="material-symbols-outlined text-lg md:text-xl">videocam</span> 
                         RESERVAR VIDEOCONSULTA
                     </button>
 
-                    <button onclick="showWhatsappOptions()" class="w-full bg-[#25D366] hover:bg-[#20db5b] text-white h-12 md:h-14 px-4 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5 md:w-6 md:h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-6.9c-18.6-29.5-28.4-64.3-28.4-100.4 0-101.3 82.2-183.7 183.7-183.7 49 0 95.1 19.1 129.8 53.8 34.7 34.7 53.8 80.8 53.8 129.8 0 101.3-82.2 183.7-183.7 183.7zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                        RESERVAR POR WHATSAPP
+                    <button onclick="showLocationSelection()" class="w-full bg-[#25D366] hover:bg-[#20db5b] text-white h-12 md:h-14 px-4 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-lg md:text-xl">apartment</span>
+                        RESERVAR PARA CONSULTORIO
                     </button>
                 </div>
 
@@ -83,8 +84,8 @@
                 </p>
             </div>
 
-            <!-- PASO 2: Selección de sede WhatsApp (Oculto inicialmente) -->
-            <div id="step-whatsapp" class="hidden bg-white dark:bg-gray-800 p-6 md:p-10 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 animate-fade-in-up">
+            <!-- PASO 2: Selección de sede (Oculto inicialmente) -->
+            <div id="step-location" class="hidden bg-white dark:bg-gray-800 p-6 md:p-10 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 animate-fade-in-up">
                 
                 <div class="cursor-pointer text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 flex items-center gap-1 mb-6" onclick="showMethodSelection()">
                     <span class="material-symbols-outlined text-base md:text-lg">arrow_back</span>
@@ -93,7 +94,7 @@
 
                 <div class="text-center mb-6">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-green-50 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6 md:w-8 md:h-8 fill-current text-[#25D366]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-6.9c-18.6-29.5-28.4-64.3-28.4-100.4 0-101.3 82.2-183.7 183.7-183.7 49 0 95.1 19.1 129.8 53.8 34.7 34.7 53.8 80.8 53.8 129.8 0 101.3-82.2 183.7-183.7 183.7zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        <span class="material-symbols-outlined text-[#25D366] text-2xl md:text-3xl">location_on</span>
                     </div>
                     <h2 class="text-lg md:text-2xl font-extrabold font-display text-gray-900 dark:text-white mb-2">
                         Seleccioná tu sede
@@ -104,10 +105,10 @@
                 </div>
 
                 <div class="space-y-3 max-w-md mx-auto">
-                    <a href="https://api.whatsapp.com/send/?phone=5491154230223&text=Hola%2C+vengo+de+la+web+y+quisiera+agendar+una+valoraci%C3%B3n+para+ver+mi+caso.&type=phone_number&app_absent=0" target="_blank" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#25D366] py-4 px-4 rounded-xl shadow-md transition-all hover:shadow-lg hover:border-[#20db5b]">
+                    <button onclick="selectLocation('Canning')" class="block w-full text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#25D366] py-4 px-4 rounded-xl shadow-md transition-all hover:shadow-lg hover:border-[#20db5b]">
                         <div class="flex items-center gap-3 mb-1.5">
                             <div class="flex-shrink-0 w-11 h-11 bg-[#25D366] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-6.9c-18.6-29.5-28.4-64.3-28.4-100.4 0-101.3 82.2-183.7 183.7-183.7 49 0 95.1 19.1 129.8 53.8 34.7 34.7 53.8 80.8 53.8 129.8 0 101.3-82.2 183.7-183.7 183.7zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                                <span class="material-symbols-outlined text-white text-xl">location_on</span>
                             </div>
                             <div class="flex-grow">
                                 <div class="font-bold text-base text-gray-900 dark:text-white flex items-center gap-1">
@@ -121,12 +122,12 @@
                         <div class="text-xs text-gray-500 dark:text-gray-400 pl-14 font-semibold">
                             Pedro Dreyer 4655, Canning
                         </div>
-                    </a>
+                    </button>
                     
-                    <a href="https://api.whatsapp.com/send/?phone=5491148588100&text=Hola%2C+vengo+de+la+web+y+quisiera+agendar+una+valoraci%C3%B3n+para+ver+mi+caso.&type=phone_number&app_absent=0" target="_blank" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#25D366] py-4 px-4 rounded-xl shadow-md transition-all hover:shadow-lg hover:border-[#20db5b]">
+                    <button onclick="selectLocation('Caballito')" class="block w-full text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#25D366] py-4 px-4 rounded-xl shadow-md transition-all hover:shadow-lg hover:border-[#20db5b]">
                         <div class="flex items-center gap-3 mb-1.5">
                             <div class="flex-shrink-0 w-11 h-11 bg-[#25D366] rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-6.9c-18.6-29.5-28.4-64.3-28.4-100.4 0-101.3 82.2-183.7 183.7-183.7 49 0 95.1 19.1 129.8 53.8 34.7 34.7 53.8 80.8 53.8 129.8 0 101.3-82.2 183.7-183.7 183.7zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                                <span class="material-symbols-outlined text-white text-xl">location_on</span>
                             </div>
                             <div class="flex-grow">
                                 <div class="font-bold text-base text-gray-900 dark:text-white flex items-center gap-1">
@@ -140,38 +141,29 @@
                         <div class="text-xs text-gray-500 dark:text-gray-400 pl-14 font-semibold">
                             Mahatma Gandhi 572, CABA
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
 
             <!-- PASO 3: Formulario (Oculto inicialmente) -->
             <div id="step-form" class="hidden bg-white dark:bg-gray-800 p-5 md:p-8 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative animate-fade-in-up">
                 
-                <div class="absolute top-3 left-3 md:top-4 md:left-4 cursor-pointer text-gray-400 hover:text-gray-600 flex items-center gap-1" onclick="showMethodSelection()">
+                <div class="absolute top-3 left-3 md:top-4 md:left-4 cursor-pointer text-gray-400 hover:text-gray-600 flex items-center gap-1" onclick="showBackFromForm()">
                     <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
                     <span class="text-xs md:text-sm font-medium">Volver</span>
                 </div>
 
-
                 <p class="text-sm md:text-lg font-bold text-black dark:text-white text-center mb-4 mt-10 md:mb-6 md:mt-4 px-6 mx-auto max-w-[90%] leading-tight">
-                    Rellena el formulario y te contestamos antes de las 24 horas. 👇
+                    Completá tus datos para finalizar la solicitud <span id="sede-label" class="text-primary block mt-1 text-sm font-extrabold uppercase"></span>
                 </p>
                 
-                <form class="flex flex-col gap-3 md:gap-5" id="contactForm" onsubmit="handleSubmit(event)">
-                    <input class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
-                    <input class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email" required type="email"/>
-                    <input class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
+                <form class="flex flex-col gap-3 md:gap-5" id="whatsappForm" onsubmit="handleSubmit(event)">
+                    <input id="inputName" class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Nombre Completo" required type="text"/>
+                    <input id="inputEmail" class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Email (Opcional)" type="email"/>
+                    <input id="inputPhone" class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Teléfono" required type="tel"/>
                     
                     <div class="relative">
-                         <select class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 pr-10 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
-                            <option value="" disabled selected>Seleccioná la Sede</option>
-                            <option value="caballito">📍 CABA: Clínica San Camilo</option>
-                            <option value="canning">📍 Canning: Centro Médico CIDI</option>
-                        </select>
-                    </div>
-
-                    <div class="relative">
-                         <select class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 pr-10 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                         <select id="inputPain" class="h-10 md:h-12 w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 pr-10 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white appearance-none cursor-pointer truncate" required style="background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E&quot;); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
                             <option value="" disabled selected>¿Dónde es tu dolor?</option>
                             <option value="rodilla">Rodilla</option>
                             <option value="hombro">Hombro</option>
@@ -179,11 +171,13 @@
                         </select>
                     </div>
 
-                    <textarea class="w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="3"></textarea>
-                    <button type="submit" class="h-12 md:h-14 w-full rounded-lg bg-primary text-white font-bold text-sm md:text-base hover:bg-primary-dark transition-colors shadow-md uppercase tracking-wide flex items-center justify-center gap-2">
-                        <span>Enviar Solicitud</span>
+                    <textarea id="inputDesc" class="w-full rounded-lg border-gray-200 bg-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900 dark:text-white" placeholder="Breve descripción de tu lesión..." rows="3"></textarea>
+                    
+                    <button type="submit" class="h-12 md:h-14 w-full rounded-lg bg-[#25D366] hover:bg-[#20db5b] text-white font-bold text-sm md:text-base transition-colors shadow-md uppercase tracking-wide flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-6.9c-18.6-29.5-28.4-64.3-28.4-100.4 0-101.3 82.2-183.7 183.7-183.7 49 0 95.1 19.1 129.8 53.8 34.7 34.7 53.8 80.8 53.8 129.8 0 101.3-82.2 183.7-183.7 183.7zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                        <span>Solicitar Turno por WhatsApp</span>
                     </button>
-                    <p class="text-xs text-center text-gray-400 mt-1 md:mt-2">Te responderemos a la brevedad.</p>
+                    <p class="text-xs text-center text-gray-400 mt-1 md:mt-2">Te redigiremos a WhatsApp para enviar el pedido.</p>
                 </form>
             </div>
 
@@ -191,38 +185,94 @@
     </main>
 
     <script>
+        // State
+        let selectedSede = '';
+
         function showMethodSelection() {
             document.getElementById('step-form').classList.add('hidden');
-            document.getElementById('step-whatsapp').classList.add('hidden');
+            document.getElementById('step-location').classList.add('hidden');
             document.getElementById('step-method').classList.remove('hidden');
+            selectedSede = '';
         }
 
-        function showWhatsappOptions() {
+        function showLocationSelection() {
             document.getElementById('step-method').classList.add('hidden');
-            document.getElementById('step-whatsapp').classList.remove('hidden');
+            document.getElementById('step-form').classList.add('hidden');
+            document.getElementById('step-location').classList.remove('hidden');
+        }
+
+        // Direct path for VideoConsulta
+        function selectVideoconsulta() {
+            selectedSede = 'Videoconsulta (Online)';
+            showForm();
+        }
+
+        // Path for Consultorio
+        function selectLocation(locationName) {
+            selectedSede = locationName;
+            showForm();
         }
 
         function showForm() {
             document.getElementById('step-method').classList.add('hidden');
-            document.getElementById('step-whatsapp').classList.add('hidden');
+            document.getElementById('step-location').classList.add('hidden');
             document.getElementById('step-form').classList.remove('hidden');
+            
+            // Update Label
+            document.getElementById('sede-label').innerText = `EN: ${selectedSede}`;
+        }
+
+        function showBackFromForm() {
+            if (selectedSede === 'Videoconsulta (Online)') {
+                showMethodSelection();
+            } else {
+                showLocationSelection();
+            }
         }
 
         function handleSubmit(event) {
             event.preventDefault();
+            
             const btn = event.target.querySelector('button');
             const originalText = btn.innerHTML;
             
+            const name = document.getElementById('inputName').value;
+            const email = document.getElementById('inputEmail').value;
+            const phone = document.getElementById('inputPhone').value;
+            const pain = document.getElementById('inputPain').value;
+            const desc = document.getElementById('inputDesc').value;
+            
+            // --- CONFIGURE WHATSAPP NUMBER HERE ---
+            const whatsappNumber = "5491155914232"; // Actual number provided by user
+            // --------------------------------------
+
+            let message = `SOLICITUD DE TURNO 👋\n\n`;
+            message += `Nombre: ${name}\n`;
+            message += `Teléfono: ${phone}\n`;
+            if(email) message += `Email: ${email}\n`;
+            message += `----------------------------------\n`;
+            message += `Sede/Modalidad: ${selectedSede}\n`;
+            message += `Zona de dolor: ${pain}\n`;
+            if(desc) message += `Comentarios: ${desc}\n`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
             // Loading state
-            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Enviando...';
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Abriendo WhatsApp...';
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-            // Simulate server request
             setTimeout(() => {
-                // Success! Redirect to index
-                window.location.href = 'index.html';
-            }, 1500);
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset State
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }, 1000);
         }
     </script>
 </body>

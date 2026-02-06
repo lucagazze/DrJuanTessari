@@ -15,7 +15,7 @@
     
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -36,7 +36,8 @@
                     },
                     fontFamily: {
                         "display": ["Helvetica", "Arial", "sans-serif"],
-                        "body": ["Helvetica", "Arial", "sans-serif"]
+                        "body": ["Helvetica", "Arial", "sans-serif"],
+                        "cursive": ["Playfair Display", "serif"],
                     },
                     borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
@@ -81,17 +82,18 @@
     <main class="flex flex-col w-full">
         <!-- Hero Section -->
         <section class="bg-[#0f172a] w-full pt-12 md:pt-20 pb-20 md:pb-24 relative">
-            <div class="max-w-6xl mx-auto flex flex-col items-center gap-8 mb-16 relative z-10 px-4">
-                <!-- Subtle Badge -->
-                <div class="bg-blue-800/30 border border-blue-500/30 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium backdrop-blur-md">
-                    Especialista en Rodilla y Hombro
-                </div>
-
-                <h1 class="text-white text-3xl md:text-[2.75rem] font-bold tracking-tight leading-tight text-center">
-                    Soluciones definitivas para Rodilla y Hombro
+            <div class="max-w-6xl mx-auto flex flex-col items-center gap-6 mb-16 relative z-10 px-4">
+                
+                <h1 class="text-white text-3xl md:text-6xl font-cursive italic tracking-wide text-center">
+                    Dr. Juan Tessari
                 </h1>
-                <p class="text-gray-300 text-base md:text-lg max-w-2xl font-medium text-center">
-                    (Tratamientos para <span class="text-white border-b-2 border-blue-400">volvér al 100% sin dolor.</span>👇)
+
+                <h2 class="text-white text-2xl md:text-[2.5rem] font-bold tracking-tight leading-tight text-center max-w-4xl mt-2 font-body">
+                    Más de 15 años devolviendo calidad de vida a mis pacientes.
+                </h2>
+                
+                <p class="text-gray-300 text-sm md:text-xl font-body text-center mt-2 font-medium">
+                    Especialista en hombro, rodillas y tratamientos alternativos
                 </p>
                 
                 <!-- Desktop Button (Restored Position) -->
