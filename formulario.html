@@ -260,6 +260,17 @@
                 btn.innerHTML = originalText;
             }, 3000);
         }
+
+        // Fix for mobile keyboard layout shift
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                // Small delay to allow keyboard to close and viewport to resize
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+            });
+        });
     </script>
 </body>
 </html>
