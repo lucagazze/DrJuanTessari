@@ -242,23 +242,23 @@
             if(desc) message += `Comentarios: ${desc}\n`;
 
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            // Use api.whatsapp.com for more reliable deep linking on some devices
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
 
             // Loading state
             btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Abriendo...';
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
+            // Open immediately to avoid popup blockers
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset Button State after a short delay
             setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-                
-                // Reset State
-                setTimeout(() => {
-                    btn.disabled = false;
-                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
-                    btn.innerHTML = originalText;
-                }, 2000);
-            }, 1000);
+                btn.disabled = false;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                btn.innerHTML = originalText;
+            }, 3000);
         }
     </script>
 </body>
