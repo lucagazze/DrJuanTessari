@@ -42,9 +42,9 @@
         }
     </script>
 </head>
-<body class="bg-[#0f172a] text-[#111418] dark:text-white font-body h-screen w-screen overflow-hidden flex flex-col supports-[height:100svh]:h-[100svh]">
+<body class="bg-[#0f172a] text-[#111418] dark:text-white font-body min-h-screen w-full flex flex-col">
 
-    <main class="flex-grow flex items-center justify-center p-4 w-full h-full relative">
+    <main class="flex-grow flex items-center justify-center p-4 w-full relative">
         
         <!-- Decoration Background (Optional to give depth without scroll) -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -53,7 +53,7 @@
         </div>
 
         <!-- Contenedor Principal -->
-        <div class="w-full max-w-lg relative z-10 max-h-full flex flex-col justify-center">
+        <div class="w-full max-w-lg relative z-10 flex flex-col justify-center my-4">
 
             <!-- PASO 1: Selección de método -->
             <div id="step-method" class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 text-center animate-fade-in-up flex flex-col justify-center gap-6">
@@ -90,7 +90,7 @@
             </div>
 
             <!-- PASO 2: Selección de sede (Oculto inicialmente) -->
-            <div id="step-location" class="hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 animate-fade-in-up flex flex-col max-h-[90vh]">
+            <div id="step-location" class="hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 animate-fade-in-up flex flex-col">
                 
                 <div class="flex items-center gap-2 mb-6 cursor-pointer text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 w-fit" onclick="showMethodSelection()">
                     <span class="material-symbols-outlined text-xl">arrow_back</span>
@@ -106,7 +106,7 @@
                     </p>
                 </div>
 
-                <div class="space-y-4 overflow-y-auto pr-1">
+                <div class="space-y-4 pr-1">
                     <button onclick="selectLocation('Canning')" class="group w-full text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#25D366] p-4 rounded-xl shadow-md transition-all hover:shadow-lg hover:border-[#20db5b]">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center transition-colors">
@@ -134,7 +134,7 @@
             </div>
 
             <!-- PASO 3: Formulario (Oculto inicialmente) -->
-            <div id="step-form" class="hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative animate-fade-in-up flex flex-col max-h-[95vh]">
+            <div id="step-form" class="hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative animate-fade-in-up flex flex-col">
                 
                 <div class="absolute top-4 left-4 cursor-pointer text-gray-400 hover:text-gray-600 flex items-center gap-1 p-2" onclick="showBackFromForm()">
                     <span class="material-symbols-outlined text-lg">arrow_back</span>
@@ -147,7 +147,7 @@
                     <span id="sede-label" class="text-primary text-xs font-bold uppercase tracking-widest mt-1 block"></span>
                 </div>
                 
-                <form class="flex flex-col gap-4 overflow-y-auto px-1 pb-1" id="whatsappForm" onsubmit="handleSubmit(event)">
+                <form class="flex flex-col gap-4 px-1 pb-1" id="whatsappForm" onsubmit="handleSubmit(event)">
                     <div class="space-y-4">
                         <input id="inputName" class="h-12 md:h-14 w-full rounded-xl border-gray-200 bg-gray-50 px-4 text-[16px] focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-900/50 dark:text-white" placeholder="Nombre y Apellido" required type="text"/>
                     </div>
