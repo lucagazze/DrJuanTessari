@@ -263,12 +263,20 @@
 
         // Fix for mobile keyboard layout shift
         const inputs = document.querySelectorAll('input, select, textarea');
+        
         inputs.forEach(input => {
-            input.addEventListener('blur', () => {
-                // Small delay to allow keyboard to close and viewport to resize
+            input.addEventListener('blur', (e) => {
+                // Check if focus moved to another input in our form
+                // We use a small timeout because activeElement might not update instantly in all browsers
                 setTimeout(() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                    const activeEl = document.activeElement;
+                    const isInput = activeEl.tagName === 'INPUT' || activeEl.tagName === 'SELECT' || activeEl.tagName === 'TEXTAREA';
+                    
+                    // Only scroll to top if we are NOT focusing another field
+                    if (!isInput) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }, 200); // Increased slightly to allow keyboard animation to finish
             });
         });
     </script>
