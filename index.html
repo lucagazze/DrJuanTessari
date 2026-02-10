@@ -114,13 +114,12 @@
                     <video 
                         class="w-full h-full object-cover cursor-pointer"
                         id="hero-feature-video"
-                        preload="auto"
+                        preload="none"
                         muted
                         playsinline
                         loop
-                        autoplay
                     >
-                        <source src="https://res.cloudinary.com/dfixkx6yi/video/upload/v1770724074/IMG_0401_pahfg0.mov" type="video/mp4">
+                        <source data-src="https://res.cloudinary.com/dfixkx6yi/video/upload/v1770724074/IMG_0401_pahfg0.mov" type="video/mp4">
                         Tu navegador no soporta videos HTML5.
                     </video>
                     <!-- Play overlay hint -->
@@ -724,8 +723,20 @@ Reservar Cita            <!-- Little triangle tail pointing right -->
                     // openModal(); 
                 });
 
-                // Autoplay hero video
-                heroVideo.play().catch(console.error);
+                // Autoplay handled on window load
+            }
+        });
+
+        // Defer video loading until everything else is loaded
+        window.addEventListener('load', () => {
+            const video = document.getElementById('hero-feature-video');
+            if (video) {
+                const source = video.querySelector('source');
+                if (source && source.dataset.src) {
+                    source.src = source.dataset.src;
+                    video.load();
+                    video.play().catch(console.error);
+                }
             }
         });
     </script>
