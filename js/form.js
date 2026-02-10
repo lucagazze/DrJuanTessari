@@ -70,8 +70,21 @@
         const pain = inputPain.value;
         const desc = inputDesc.value;
         
-        // --- CONFIGURE WHATSAPP NUMBER HERE ---
-        const whatsappNumber = "5491155914232"; // Actual number provided by user
+        // --- CONFIGURE WHATSAPP NUMBER BASED ON LOCATION ---
+        let whatsappNumber;
+        
+        // CIDI Canning uses one number
+        if (selectedSede === 'Canning') {
+            whatsappNumber = "5491154230223";
+        } 
+        // VideoConsulta and San Camilo use the new number
+        else if (selectedSede === 'Videoconsulta (Online)' || selectedSede === 'Caballito') {
+            whatsappNumber = "5491126882414";
+        }
+        // Fallback (should not happen)
+        else {
+            whatsappNumber = "5491126882414";
+        }
         // --------------------------------------
 
         let message = `SOLICITUD DE TURNO 👋\n\n`;
