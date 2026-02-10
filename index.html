@@ -115,7 +115,7 @@
     <header class="w-full bg-white text-[#111418] sticky top-0 z-50 shadow-md">
         <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-10 py-2">
             <a href="#" class="block">
-                <img src="logosinfondo.webp" alt="Dr. Juan Tessari" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity scale-125 ml-2">
+                <img src="logosinfondo.webp" alt="Dr. Juan Tessari" width="600" height="600" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity scale-125 ml-2">
             </a>
             <button onclick="window.location.href='formulario.html'" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
                 Agendar Cita
@@ -381,7 +381,7 @@
                 </div>
                 <!-- Image -->
                 <div class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl group border-4 border-white dark:border-gray-700">
-                     <img src="doctor.webp" alt="Dr. Juan Tessari" loading="lazy" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700">
+                     <img src="doctor.webp" alt="Dr. Juan Tessari" width="853" height="1280" loading="lazy" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
         </section>
@@ -595,216 +595,7 @@ Reservar Cita            <!-- Little triangle tail pointing right -->
         </div>
     </div>
 
-    <script>
-        function openWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeWhatsAppModal() {
-            document.getElementById('whatsappModal').classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        // HTML5 Video Modal Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoModal = document.getElementById('video-modal');
-            const closeVideo = document.getElementById('close-video');
-            const videoContainer = document.getElementById('video-container');
-            const heroVideo = document.getElementById('hero-feature-video');
-            const modalVideo = document.getElementById('modal-video');
-
-            if (videoModal && closeVideo && videoContainer && heroVideo && modalVideo) {
-                let hasOpenedOnce = false;
-
-                const syncToInline = () => {
-                    heroVideo.currentTime = modalVideo.currentTime;
-                    heroVideo.muted = false;
-                    heroVideo.controls = true;
-                    heroVideo.volume = 1;
-                    heroVideo.play().catch(console.error);
-                };
-
-                const closeModalLogic = () => {
-                    videoModal.classList.add('opacity-0', 'pointer-events-none');
-                    videoContainer.classList.add('scale-95');
-                    videoContainer.classList.remove('scale-100');
-                    modalVideo.pause();
-                    document.body.style.overflow = '';
-                };
-
-                const openModal = () => {
-                    videoModal.classList.remove('opacity-0', 'pointer-events-none');
-                    videoContainer.classList.remove('scale-95');
-                    videoContainer.classList.add('scale-100');
-                    document.body.style.overflow = 'hidden';
-                    
-                    // Sync time logic
-                    if (heroVideo) {
-                        if (!hasOpenedOnce) {
-                            modalVideo.currentTime = 0;
-                            hasOpenedOnce = true;
-                        } else {
-                            modalVideo.currentTime = heroVideo.currentTime;
-                        }
-                        heroVideo.pause(); 
-                    } else {
-                        modalVideo.currentTime = 0;
-                    }
-                    
-                    modalVideo.muted = false;
-                    modalVideo.volume = 1;
-
-                    const isMobile = window.innerWidth < 1024;
-                    
-                    modalVideo.play().catch(e => console.error('Play error:', e));
-
-                    if (isMobile) {
-                        if (modalVideo.webkitEnterFullscreen) {
-                            modalVideo.webkitEnterFullscreen();
-                        } else if (modalVideo.requestFullscreen) {
-                            modalVideo.requestFullscreen();
-                        } else if (modalVideo.webkitRequestFullscreen) {
-                            modalVideo.webkitRequestFullscreen();
-                        } else if (modalVideo.msRequestFullscreen) {
-                            modalVideo.msRequestFullscreen();
-                        }
-                    }
-                };
-
-                const startVideoPlayback = () => {
-                    // Hide overlay permanently
-                    const overlay = document.getElementById('play-overlay');
-                    if (overlay) {
-                        overlay.style.display = 'none';
-                    }
-                    
-                    // Play in-place with sound and controls
-                    heroVideo.currentTime = 0;
-                    heroVideo.muted = false;
-                    heroVideo.controls = true;
-                    heroVideo.volume = 1;
-                    heroVideo.play().catch(console.error);
-                };
-
-                // Hero Video Click Handler
-                heroVideo.addEventListener('click', (e) => {
-                    if (heroVideo.controls) return;
-                    e.preventDefault();
-                    startVideoPlayback();
-                });
-
-                const closeModal = () => {
-                    if (document.fullscreenElement || document.webkitFullscreenElement) {
-                        if (document.exitFullscreen) {
-                            document.exitFullscreen().catch(console.error);
-                        } else if (document.webkitExitFullscreen) {
-                            document.webkitExitFullscreen();
-                        }
-                    } else {
-                        syncToInline();
-                        closeModalLogic();
-                    }
-                };
-
-                // Event Listeners
-                closeVideo.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    closeModal();
-                });
-
-                videoModal.addEventListener('click', (e) => {
-                    if (e.target === videoModal) closeModal();
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') closeModal();
-                });
-
-                // Fullscreen Change Handlers
-                const handleFullscreenChange = () => {
-                    const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement;
-                    if (!isFullscreen && !videoModal.classList.contains('pointer-events-none')) {
-                        syncToInline();
-                        closeModalLogic();
-                    }
-                };
-
-                const handleIOSFullscreenExit = () => {
-                    if (!videoModal.classList.contains('pointer-events-none')) {
-                        syncToInline();
-                        closeModalLogic();
-                    }
-                };
-
-                modalVideo.addEventListener('fullscreenchange', handleFullscreenChange);
-                modalVideo.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-                modalVideo.addEventListener('webkitendfullscreen', handleIOSFullscreenExit);
-
-                // Hero Video Click Handler
-                heroVideo.addEventListener('click', (e) => {
-                    if (heroVideo.controls) return;
-                    e.preventDefault();
-                    
-                    // Hide overlay permanently
-                    const overlay = document.getElementById('play-overlay');
-                    if (overlay) {
-                        overlay.style.display = 'none';
-                    }
-                    
-                    // Play in-place with sound and controls
-                    heroVideo.currentTime = 0;
-                    heroVideo.muted = false;
-                    heroVideo.controls = true;
-                    heroVideo.volume = 1;
-                    heroVideo.play().catch(console.error);
-
-                    // Don't open modal anymore
-                    // openModal(); 
-                });
-
-                // Autoplay handled on window load
-            }
-        });
-
-        // Defer video loading until everything else is loaded
-        // Defer video loading until everything else is loaded & handle preloader
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            const body = document.body;
-
-            // Fade out preloader
-            if (preloader) {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                    body.classList.remove('loading');
-                    
-                    // Initialize video AFTER page is revealed
-                    const video = document.getElementById('hero-feature-video');
-                    if (video) {
-                        const source = video.querySelector('source');
-                        if (source && source.dataset.src) {
-                            source.src = source.dataset.src;
-                            video.load(); // Load the new source
-                            
-                            // Attempt playback
-                            const playPromise = video.play();
-                            if (playPromise !== undefined) {
-                                playPromise.then(_ => {
-                                    // Autoplay started!
-                                }).catch(error => {
-                                    console.log("Autoplay prevented:", error);
-                                    video.muted = true;
-                                    video.play();
-                                });
-                            }
-                        }
-                    }
-                }, 500); // Wait for fade out transition
-            }
-        });
-    </script>
+    <script src="js/app.js"></script>
 
 
 </body>

@@ -1,6 +1,6 @@
 /**
  * Doctor Rodilla - Main Logic
- * Handles Interactions, Form Validation, and Scroll Animations
+ * Handles Interactions, Scroll Animations, Modals and Video
  */
 
 (function() {
@@ -10,47 +10,6 @@
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     
-    // --- Video Logic ---
-    const videoContainer = document.getElementById('videoContainer');
-    const heroVideo = document.getElementById('heroVideo');
-    const videoOverlay = document.getElementById('videoOverlay');
-
-    if (videoContainer && heroVideo && videoOverlay) {
-        // Attempt autoplay immediately (muted)
-        heroVideo.play().catch(e => {
-            console.log('Autoplay blocked:', e);
-            // If autoplay is blocked, show a "click to play" indicator logic (handled by our overlay essentially)
-        });
-
-        // Click handler
-        const activatingVideo = () => {
-             // Only activate if not already activated (we check controls to know state)
-             if (!heroVideo.controls) {
-                heroVideo.muted = false;
-                heroVideo.currentTime = 0;
-                heroVideo.controls = true;
-                heroVideo.loop = false;
-                
-                // Hide overlay
-                videoOverlay.style.opacity = '0';
-                setTimeout(() => {
-                    videoOverlay.style.display = 'none';
-                }, 300);
-
-                // Enhance visibility
-                heroVideo.classList.remove('opacity-80', 'group-hover:opacity-60');
-                heroVideo.classList.add('opacity-100');
-                
-                heroVideo.play();
-
-                // Remove listener so native controls work without interference
-                videoContainer.removeEventListener('click', activatingVideo);
-             }
-        };
-
-        videoContainer.addEventListener('click', activatingVideo);
-    }
-
     // --- Scroll Animations (Intersection Observer) ---
     const observerOptions = {
         threshold: 0.15,
@@ -67,85 +26,161 @@
     }, observerOptions);
 
     // Select elements to animate
-    // We add the 'reveal' class to sections/elements we want to animate
     document.querySelectorAll('section, .float-card, .testimony-card, .faq-item').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
     });
 
+    // --- WhatsApp Modal Logic ---
+    window.openWhatsAppModal = function() {
+        const modal = document.getElementById('whatsappModal');
+        if (modal) {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    };
 
-    // --- Form Validation & Submission ---
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic Native Validation Check
-            if (!contactForm.checkValidity()) {
-                contactForm.reportValidity();
-                return;
-            }
+    window.closeWhatsAppModal = function() {
+        const modal = document.getElementById('whatsappModal');
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    };
 
-            // Lock UI
-            const originalText = submitBtn ? submitBtn.innerText : 'Enviar';
-            if(submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerText = 'Enviando...';
-            }
+    // --- Video Modal Logic ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const videoModal = document.getElementById('video-modal');
+        const closeVideo = document.getElementById('close-video');
+        const videoContainer = document.getElementById('video-container');
+        const heroVideo = document.getElementById('hero-feature-video');
+        const modalVideo = document.getElementById('modal-video');
 
-            // Simulate Network Request
-            setTimeout(() => {
-                // Success State
-                if(submitBtn) {
-                    submitBtn.innerText = '¡Enviado con Éxito!';
-                    submitBtn.style.backgroundColor = 'var(--color-whatsapp)';
+        if (videoModal && closeVideo && videoContainer && heroVideo && modalVideo) {
+            let hasOpenedOnce = false;
+
+            const syncToInline = () => {
+                heroVideo.currentTime = modalVideo.currentTime;
+                heroVideo.muted = false;
+                heroVideo.controls = true;
+                heroVideo.volume = 1;
+                heroVideo.play().catch(console.error);
+            };
+
+            const closeModalLogic = () => {
+                videoModal.classList.add('opacity-0', 'pointer-events-none');
+                videoContainer.classList.add('scale-95');
+                videoContainer.classList.remove('scale-100');
+                modalVideo.pause();
+                document.body.style.overflow = '';
+            };
+
+            const startVideoPlayback = () => {
+                // Hide overlay permanently
+                const overlay = document.getElementById('play-overlay');
+                if (overlay) {
+                    overlay.style.display = 'none';
                 }
-                contactForm.reset();
-
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    if(submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerText = originalText;
-                        submitBtn.style.backgroundColor = '';
-                    }
-                }, 3000);
-            }, 1000);
-        });
-    }
-
-    // --- Interactive Infinite Carousel (Mobile) ---
-    const carousel = document.getElementById('mobileStatsCarousel');
-    if (carousel) {
-        let isPaused = false;
-        let animationId;
-        const speed = 0.5; // Adjust for smoothness
-
-        // Infinite Loop Logic
-        const autoScroll = () => {
-            if (!isPaused) {
-                // Determine the midpoint (end of first set)
-                // We assume duplicates are exact copies, so standard content is half of scrollWidth
-                const maxScroll = carousel.scrollWidth / 2;
                 
-                carousel.scrollLeft += speed;
+                // Play in-place with sound and controls
+                heroVideo.currentTime = 0;
+                heroVideo.muted = false;
+                heroVideo.controls = true;
+                heroVideo.volume = 1;
+                heroVideo.play().catch(console.error);
+            };
 
-                // Reset to start if we pass the midpoint (seamless loop)
-                // Note: using >= checks if we've scrolled past the first set
-                if (carousel.scrollLeft >= maxScroll) {
-                   carousel.scrollLeft = 0; // Jump back to start instantly
+            // Hero Video Click Handler
+            heroVideo.addEventListener('click', (e) => {
+                if (heroVideo.controls) return;
+                e.preventDefault();
+                startVideoPlayback();
+            });
+
+            const closeModal = () => {
+                if (document.fullscreenElement || document.webkitFullscreenElement) {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen().catch(console.error);
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                } else {
+                    syncToInline();
+                    closeModalLogic();
                 }
-            }
-            animationId = requestAnimationFrame(autoScroll);
-        };
+            };
 
-        // Start Animation
-        animationId = requestAnimationFrame(autoScroll);
+            // Event Listeners
+            closeVideo.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeModal();
+            });
 
-        // Pause on User Interaction (Touch or Hover)
-        carousel.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-        carousel.addEventListener('touchend', () => { isPaused = false; });
-        carousel.addEventListener('mouseenter', () => { isPaused = true; });
-        carousel.addEventListener('mouseleave', () => { isPaused = false; });
-    }
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) closeModal();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            // Fullscreen Change Handlers
+            const handleFullscreenChange = () => {
+                const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement;
+                if (!isFullscreen && !videoModal.classList.contains('pointer-events-none')) {
+                    syncToInline();
+                    closeModalLogic();
+                }
+            };
+
+            const handleIOSFullscreenExit = () => {
+                if (!videoModal.classList.contains('pointer-events-none')) {
+                    syncToInline();
+                    closeModalLogic();
+                }
+            };
+
+            modalVideo.addEventListener('fullscreenchange', handleFullscreenChange);
+            modalVideo.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+            modalVideo.addEventListener('webkitendfullscreen', handleIOSFullscreenExit);
+        }
+    });
+
+    // --- Window Load Logic (Preloader & Video Init) ---
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        const body = document.body;
+
+        // Fade out preloader
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                body.classList.remove('loading');
+                
+                // Initialize video AFTER page is revealed
+                const video = document.getElementById('hero-feature-video');
+                if (video) {
+                    const source = video.querySelector('source');
+                    if (source && source.dataset.src) {
+                        source.src = source.dataset.src;
+                        video.load(); // Load the new source
+                        
+                        // Attempt playback
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(_ => {
+                                // Autoplay started!
+                            }).catch(error => {
+                                console.log("Autoplay prevented:", error);
+                                video.muted = true;
+                                video.play();
+                            });
+                        }
+                    }
+                }
+            }, 500);
+        }
+    });
 
 })();
