@@ -108,14 +108,25 @@
                 </div>
             </div>
             
-            <div class="max-w-[1000px] mx-auto relative z-20 px-4 flex flex-col gap-4 mb-[-4rem] md:mb-[-14rem]">
-                <!-- Video Container -->
-                <!-- Video Container -->
-                <!-- Image Container -->
-                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcg6frtoLhMaFmgFBcRow-684eRr9r07v-KejvV0BzPeZmwNU83jiawz-miKVD6yY3Ph-aS33iASjU2vLzW_8Qmg-RcKfyRuxqolxf4sD9ZU3ZYnMIweNfzlfynpDl0xYn_hprotD0JFM-r9aRDXdi0wexd0NVBkCD28f1Yo_yuP0mETutLXKqio3ArHSU-mXR3XUeE-h2vzT9Gjk61uckdrFonl8jrIuqsuw4ciaCXsQTl-60hLSmQFRW2SwdVkAzlvarCqmlbWPg" 
-                         alt="Dr. Juan Tessari" 
-                         class="w-full h-full object-cover object-center opacity-90 hover:opacity-100 transition-opacity duration-700">
+            <div class="max-w-[1000px] mx-auto relative z-20 px-4 flex flex-col gap-4 mb-[-2rem] md:mb-[-14rem]">
+                <!-- Wistia Video Container -->
+                <div id="videoContainer" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black cursor-pointer">
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/csw3p57d6y.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='csw3p57d6y']:not(:defined) { 
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/csw3p57d6y/swatch'); 
+                            display: block; 
+                            filter: blur(5px); 
+                            padding-top:56.25%; 
+                        }
+                        wistia-player[media-id='csw3p57d6y'] {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    </style>
+                    <wistia-player id="heroVideo" media-id="csw3p57d6y" aspect="1.7777777777777777"></wistia-player>
                 </div>
                 
                 <!-- Mobile Button Only -->
@@ -154,17 +165,7 @@
                             <p class="text-xs text-gray-500 font-medium leading-tight">de Trayectoria</p>
                         </div>
                     </div>
-                    
-                    <!-- Stats 3: Bottom Left -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -bottom-8 left-20">
-                        <div class="bg-green-50 p-1.5 rounded-full text-green-600">
-                            <span class="material-symbols-outlined text-xl">directions_run</span>
-                        </div>
-                        <div>
-                            <p class="text-base font-bold text-gray-800 leading-tight">Deportista Activo</p>
-                            <p class="text-xs text-gray-500 font-medium leading-tight">Te entiendo mejor</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -542,6 +543,27 @@ Reservar Cita            <!-- Little triangle tail pointing right -->
             document.getElementById('whatsappModal').classList.add('hidden');
             document.body.style.overflow = '';
         }
+
+        // Wistia video autoplay muted and click to unmute
+        window._wq = window._wq || [];
+        _wq.push({ 
+            id: "csw3p57d6y", 
+            onReady: function(video) {
+                // Autoplay muted on page load
+                video.mute();
+                video.play();
+                
+                // Click to unmute and play with sound
+                let hasUnmuted = false;
+                document.getElementById('videoContainer').addEventListener('click', function() {
+                    if (!hasUnmuted) {
+                        video.unmute();
+                        video.play();
+                        hasUnmuted = true;
+                    }
+                });
+            }
+        });
     </script>
 
 
