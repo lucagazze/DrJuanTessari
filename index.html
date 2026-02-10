@@ -67,9 +67,49 @@
                 font-size: 16px;
             }
         }
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .dark #preloader {
+            background-color: #0f172a;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #2563eb;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Hide scroll until loaded */
+        body.loading {
+            overflow: hidden;
+        }
     </style>
 </head>
-<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-body overflow-x-hidden">
+<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-body overflow-x-hidden loading">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <span class="loader"></span>
+    </div>
     
     <!-- Header -->
     <header class="w-full bg-white text-[#111418] sticky top-0 z-50 shadow-md">
@@ -728,15 +768,40 @@ Reservar Cita            <!-- Little triangle tail pointing right -->
         });
 
         // Defer video loading until everything else is loaded
+        // Defer video loading until everything else is loaded & handle preloader
         window.addEventListener('load', () => {
-            const video = document.getElementById('hero-feature-video');
-            if (video) {
-                const source = video.querySelector('source');
-                if (source && source.dataset.src) {
-                    source.src = source.dataset.src;
-                    video.load();
-                    video.play().catch(console.error);
-                }
+            const preloader = document.getElementById('preloader');
+            const body = document.body;
+
+            // Fade out preloader
+            if (preloader) {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    body.classList.remove('loading');
+                    
+                    // Initialize video AFTER page is revealed
+                    const video = document.getElementById('hero-feature-video');
+                    if (video) {
+                        const source = video.querySelector('source');
+                        if (source && source.dataset.src) {
+                            source.src = source.dataset.src;
+                            video.load(); // Load the new source
+                            
+                            // Attempt playback
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.then(_ => {
+                                    // Autoplay started!
+                                }).catch(error => {
+                                    console.log("Autoplay prevented:", error);
+                                    video.muted = true;
+                                    video.play();
+                                });
+                            }
+                        }
+                    }
+                }, 500); // Wait for fade out transition
             }
         });
     </script>
