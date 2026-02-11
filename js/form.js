@@ -87,7 +87,12 @@
         }
         // --------------------------------------
 
-        let message = `SOLICITUD DE TURNO 👋\n\n`;
+        let messageHeader = "SOLICITUD DE TURNO 👋";
+        if (selectedSede === 'Canning') {
+            messageHeader = "SOLICITUD DE TURNO con el Dr. Juan Tessari 👋";
+        }
+
+        let message = `${messageHeader}\n\n`;
         message += `Nombre: ${name}\n`;
         message += `----------------------------------\n`;
         message += `Sede/Modalidad: ${selectedSede}\n`;
