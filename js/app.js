@@ -31,22 +31,7 @@
         observer.observe(el);
     });
 
-    // --- WhatsApp Modal Logic ---
-    window.openWhatsAppModal = function() {
-        const modal = document.getElementById('whatsappModal');
-        if (modal) {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-    };
 
-    window.closeWhatsAppModal = function() {
-        const modal = document.getElementById('whatsappModal');
-        if (modal) {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-    };
 
     // --- Video Modal Logic ---
     document.addEventListener('DOMContentLoaded', () => {
