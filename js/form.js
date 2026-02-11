@@ -95,7 +95,11 @@
         let message = `${messageHeader}\n\n`;
         message += `Nombre: ${name}\n`;
         message += `----------------------------------\n`;
-        message += `Sede/Modalidad: ${selectedSede}\n`;
+        
+        if (selectedSede !== 'Canning') {
+            message += `Sede/Modalidad: ${selectedSede}\n`;
+        }
+        
         message += `Zona de dolor: ${pain}\n`;
         if(desc) message += `Comentarios: ${desc}\n`;
 
