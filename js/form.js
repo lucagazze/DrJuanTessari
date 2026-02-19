@@ -113,6 +113,9 @@
         btn.classList.add('opacity-75', 'cursor-not-allowed');
 
         // Open immediately to avoid popup blockers
+        if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+        }
         window.open(whatsappUrl, '_blank');
         
         // Reset Button State after a short delay
