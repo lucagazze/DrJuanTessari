@@ -1,8 +1,3 @@
-/**
- * Doctor Rodilla - Main Logic
- * Handles Interactions, Scroll Animations, Modals and Video
- */
-
 (function() {
     'use strict';
 
@@ -31,9 +26,21 @@
         observer.observe(el);
     });
 
-
-
-
+    // --- Wistia Video Tracking ---
+    window._wq = window._wq || [];
+    window._wq.push({
+        id: "wk5lyn8uo5", // Homepage Video ID
+        onReady: function(video) {
+            video.bind("play", function() {
+                if (typeof fbq === 'function') {
+                    console.log("Wistia Play Detected: Firing Pixel Event");
+                    fbq('trackCustom', 'VideoPlay');
+                    // Unbind to only track the first play per session to avoid noise
+                    video.unbind("play");
+                }
+            });
+        }
+    });
 
     // --- Window Load Logic (Preloader & Video Init) ---
     window.addEventListener('load', () => {
