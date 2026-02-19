@@ -17,7 +17,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" crossorigin="anonymous"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -134,7 +134,7 @@
             <a href="#" class="block">
                 <img src="logosinfondo.webp" alt="Dr. Juan Tessari" width="600" height="600" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity scale-125 ml-2">
             </a>
-            <button onclick="window.location.href='formulario.html'" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
+            <button onclick="fbq('track', 'Contact'); window.location.href='formulario.html'" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
                 Agendar Cita
             </button>
         </div>
