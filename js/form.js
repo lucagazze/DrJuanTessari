@@ -13,7 +13,7 @@
     const stepForm = document.getElementById('step-form');
     const sedeLabel = document.getElementById('sede-label');
     const inputName = document.getElementById('inputName');
-    const inputPain = document.getElementById('inputPain');
+    const inputPain = document.getElementById('inputZona');
     const inputDesc = document.getElementById('inputDesc');
     const whatsappForm = document.getElementById('whatsappForm');
 
