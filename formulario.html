@@ -203,11 +203,17 @@
 
     <script>
     function sendWhatsAppEvent() {
-      fbq('trackCustom', 'whatsapp_click');
+      try {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'whatsapp_click');
+        }
+      } catch (e) {
+        console.log('Pixel no cargado');
+      }
 
       setTimeout(function() {
         window.open("https://api.whatsapp.com/send?phone=5491126882414&text=Hola%20Dr.%20Tessari,%20tengo%20una%20consulta.", "_blank");
-      }, 300);
+      }, 700);
     }
     </script>
 </body>
