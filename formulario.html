@@ -52,11 +52,8 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '792002367314560');
-    fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=792002367314560&ev=PageView&noscript=1"
-    /></noscript>
+    <!-- End Meta Pixel Code -->
     <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-[#0f172a] text-[#111418] dark:text-white font-body h-[100svh] w-full overflow-hidden flex flex-col">
@@ -205,7 +202,7 @@
     function sendWhatsAppEvent() {
       try {
         if (typeof fbq === 'function') {
-          fbq('trackCustom', 'whatsapp_click');
+          fbq('track', 'Contact');
         }
       } catch (e) {
         console.log('Pixel no cargado');
