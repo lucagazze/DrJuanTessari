@@ -114,7 +114,7 @@
 
         // Open immediately to avoid popup blockers
         if (typeof fbq === 'function') {
-            fbq('track', 'Lead');
+            fbq('trackCustom', 'whatsapp_click');
         }
         window.open(whatsappUrl, '_blank');
         

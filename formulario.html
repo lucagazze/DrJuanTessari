@@ -88,12 +88,12 @@
                 </div>
 
                 <div class="space-y-4 w-full">
-                    <button onclick="fbq('track', 'Lead'); selectVideoconsulta()" class="w-full bg-primary hover:bg-primary-dark text-white h-14 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95">
+                    <button onclick="fbq('trackCustom', 'click_agendar'); selectVideoconsulta()" class="w-full bg-primary hover:bg-primary-dark text-white h-14 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95">
                         <span class="material-symbols-outlined text-xl">videocam</span> 
                         Videoconsulta (prioritario)
                     </button>
 
-                    <button onclick="fbq('track', 'Lead'); showLocationSelection()" class="w-full bg-[#25D366] hover:bg-[#20db5b] text-white h-14 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95">
+                    <button onclick="fbq('trackCustom', 'click_agendar'); showLocationSelection()" class="w-full bg-[#25D366] hover:bg-[#20db5b] text-white h-14 rounded-xl text-sm md:text-base font-bold shadow-lg transition-all uppercase tracking-wide flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95">
                         <span class="material-symbols-outlined text-xl">apartment</span>
                         Consultas presenciales
                     </button>
@@ -194,11 +194,21 @@
     </main>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=5491126882414&text=Hola%20Dr.%20Tessari,%20tengo%20una%20consulta." class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20db5b] text-white px-3 py-2 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 group" target="_blank" onclick="fbq('track', 'Lead');">
+    <a href="#" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20db5b] text-white px-3 py-2 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 group" onclick="event.preventDefault(); sendWhatsAppEvent();">
         <span class="material-symbols-outlined text-xl md:text-2xl">chat</span>
         <span class="font-bold text-xs md:text-base">Consultas?</span>
     </a>
 
     <script src="js/form.js"></script>
+
+    <script>
+    function sendWhatsAppEvent() {
+      fbq('trackCustom', 'whatsapp_click');
+
+      setTimeout(function() {
+        window.open("https://api.whatsapp.com/send?phone=5491126882414&text=Hola%20Dr.%20Tessari,%20tengo%20una%20consulta.", "_blank");
+      }, 300);
+    }
+    </script>
 </body>
 </html>
