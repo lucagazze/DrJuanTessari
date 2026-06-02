@@ -1,565 +1,382 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-    <meta name="description" content="Dr. Juan Tessari - Traumatólogo especialista en Hombro y Rodilla. Cirugía Artroscópica y Tratamientos Regenerativos. Atención en Caballito y Canning.">
-    <meta name="author" content="Dr. Juan Tessari">
-    <meta property="og:title" content="Dr. Juan Tessari - Traumatólogo Especialista">
-    <meta property="og:description" content="Recupera tu movimiento. +2000 Cirugías exitosas. Tratamientos de vanguardia para deportistas y artrosis.">
-    <meta property="og:image" content="https://drjuantessari.com.ar/logosinfondo.webp">
-    <meta property="og:url" content="https://drjuantessari.com.ar">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Dr. Juan Tessari — Traumatólogo especialista en Hombro y Rodilla. Optimización Biológica. Más de 18 años de experiencia.">
     <title>Dr. Juan Tessari | Sitio Oficial</title>
     <link rel="icon" href="logosinfondo.webp" type="image/webp">
-    
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2563eb", /* Medical Blue (Blue-600) */
-                        "primary-dark": "#1d4ed8",
-                        "secondary": "#1e3a8a",
-                        "accent": "#60a5fa",
-                        "whatsapp": "#25D366",
-                        "navy-dark": "#0f172a",
-                        "navy-deep": "#020617",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#0f172a",
-                    },
-                    fontFamily: {
-                        "display": ["Merriweather", "serif"],
-                        "body": ["Open Sans", "sans-serif"],
-                        "cursive": ["Dancing Script", "cursive"],
-                        "montserrat": ["Montserrat", "sans-serif"],
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet"/>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --white:  #ffffff;
+            --light:  #f5f5f7;
+            --dark:   #0f172a;
+            --blue:   #2563eb;
+            --blue-d: #1d4ed8;
+            --text:   #1d1d1f;
+            --text-2: #6e6e73;
+            --text-3: #86868b;
+            --r:      24px;
         }
-    </script>
-    <style type="text/tailwindcss">
-        ::-webkit-scrollbar { width: 14px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
-        .hero-bg {
-            background-color: #0f172a; 
+
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        @media (max-width: 768px) { html { font-size: 15px; } }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+        body.loading { overflow: hidden; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--light); }
+        ::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 3px; }
+
+        /* Preloader */
+        #preloader { position: fixed; inset: 0; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity .5s; }
+        .dots { display: flex; gap: 7px; }
+        .dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); animation: dot 1.2s ease-in-out infinite; }
+        .dots span:nth-child(2) { animation-delay: .2s; }
+        .dots span:nth-child(3) { animation-delay: .4s; }
+        @keyframes dot { 0%,80%,100%{transform:scale(.5);opacity:.3} 40%{transform:scale(1);opacity:1} }
+
+        /* Nav */
+        nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,.85);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(0,0,0,.08);
         }
-        .pattern-bg {
-             background-color: #475569;
-             background-image:  linear-gradient(30deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(150deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(30deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(150deg, #334155 12%, transparent 12.5%, transparent 87%, #334155 87.5%, #334155), linear-gradient(60deg, #475569 25%, transparent 25.5%, transparent 75%, #475569 75%, #475569), linear-gradient(60deg, #475569 25%, transparent 25.5%, transparent 75%, #475569 75%, #475569);
-             background-size: 80px 140px;
-             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        .nav-in { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { height: 38px; width: auto; display: block; transition: opacity .2s; }
+        .nav-logo:hover { opacity: .7; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .8rem; padding: 9px 20px; border-radius: 980px; border: none; cursor: pointer; transition: all .2s; text-decoration: none; letter-spacing: -.01em; }
+        .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,.3); }
+        .btn-blue:hover { background: var(--blue-d); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,.4); }
+        .btn-wa { background: #25D366; color: #fff; box-shadow: 0 4px 14px rgba(37,211,102,.3); }
+        .btn-wa:hover { background: #20c45a; transform: translateY(-1px); }
+
+        /* ── Top section (dark, cards visible immediately) ── */
+        .top-section {
+            background: var(--dark);
+            padding: 56px 24px 64px;
         }
-        html {
-            font-size: 15px;
+        .top-intro {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        @media (min-width: 768px) {
-            html {
-                font-size: 16px;
-            }
+        .top-cursive {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: rgba(255,255,255,.45);
+            display: block;
+            margin-bottom: 10px;
         }
-        /* Preloader Styles */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease-out;
+        .top-heading {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: -.02em;
+            line-height: 1.25;
+            margin-bottom: 8px;
         }
-        .dark #preloader {
-            background-color: #0f172a;
+        .top-heading strong { font-weight: 700; }
+        .top-sub {
+            font-size: .88rem;
+            color: rgba(255,255,255,.4);
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            font-weight: 500;
         }
-        .loader {
-            width: 48px;
-            height: 48px;
-            border: 5px solid #2563eb;
-            border-bottom-color: transparent;
-            border-radius: 50%;
-            display: inline-block;
-            box-sizing: border-box;
-            animation: rotation 1s linear infinite;
+
+        /* Cards */
+        .cards-wrap { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 700px) { .cards-wrap { grid-template-columns: 1fr; } }
+
+        .spec-card {
+            position: relative; border-radius: var(--r); overflow: hidden;
+            min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end;
+            text-decoration: none; cursor: pointer;
+            transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s;
         }
-        @keyframes rotation {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @media (max-width: 700px) { .spec-card { min-height: 420px; } }
+        .spec-card:hover { transform: scale(1.012) translateY(-4px); box-shadow: 0 28px 64px rgba(0,0,0,.45); }
+
+        .spec-bg {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center top;
+            transition: transform .5s cubic-bezier(.25,.46,.45,.94);
         }
-        /* Hide scroll until loaded */
-        body.loading {
-            overflow: hidden;
+        .spec-card:hover .spec-bg { transform: scale(1.04); }
+
+        .spec-overlay { position: absolute; inset: 0; }
+
+        .spec-body { position: relative; z-index: 2; padding: 32px; }
+
+        .spec-tag {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(255,255,255,.1); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 100px; padding: 4px 12px;
+            font-size: .67rem; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: rgba(255,255,255,.75);
+            margin-bottom: 16px;
+        }
+        .spec-title {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.5rem, 2.8vw, 2rem);
+            font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 10px;
+        }
+        .spec-desc { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.6; margin-bottom: 22px; max-width: 300px; }
+        .spec-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 28px; }
+        .spec-bullets li { display: flex; align-items: center; gap: 9px; font-size: .8rem; color: rgba(255,255,255,.7); }
+        .spec-bullets .dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.35); flex-shrink: 0; }
+
+        .spec-cta {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: .8rem; font-weight: 600; color: #fff;
+            padding: 10px 18px;
+            background: rgba(255,255,255,.1); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,.18); border-radius: 100px;
+            transition: background .2s, gap .2s;
+        }
+        .spec-card:hover .spec-cta { background: rgba(255,255,255,.18); gap: 12px; }
+
+        /* ── Stats ── */
+        .stats-section { background: var(--white); padding: 64px 24px; border-top: 1px solid rgba(0,0,0,.06); }
+        .stats-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(0,0,0,.07); border-radius: var(--r); overflow: hidden; }
+        @media (max-width: 600px) { .stats-inner { grid-template-columns: repeat(2,1fr); } }
+        .stat { background: var(--white); padding: 28px 20px; text-align: center; }
+        .stat-n { font-family: 'Merriweather', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 6px; }
+        .stat-l { font-size: .75rem; color: var(--text-2); font-weight: 500; }
+
+        /* ── About ── */
+        .about-section { background: var(--dark); padding: 80px 24px; }
+        .about-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+        @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 32px; } }
+
+        .eyebrow { font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: 14px; }
+        .eyebrow-light { color: rgba(96,165,250,.9); }
+
+        .about-title { font-family: 'Merriweather', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 300; color: #fff; line-height: 1.25; letter-spacing: -.02em; margin-bottom: 16px; }
+        .about-title strong { font-weight: 700; }
+        .about-body { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.75; margin-bottom: 14px; }
+
+        .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+        .chip { display: inline-flex; align-items: center; gap: 5px; background: rgba(37,99,235,.15); border: 1px solid rgba(37,99,235,.25); color: #93c5fd; font-size: .72rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+        .chip .material-symbols-outlined { font-size: 12px; }
+
+        .about-photo-wrap { position: relative; order: -1; }
+        @media (max-width: 768px) { .about-photo-wrap { order: -1; } }
+        .about-photo { width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: var(--r); display: block; box-shadow: 0 24px 56px rgba(0,0,0,.4); }
+        @media (max-width: 768px) { .about-photo { height: 320px; } }
+
+        /* ── CTA ── */
+        .cta-section { background: var(--white); padding: 80px 24px; }
+        .cta-card { max-width: 720px; margin: 0 auto; background: var(--dark); border-radius: var(--r); padding: 56px 40px; text-align: center; position: relative; overflow: hidden; }
+        .cta-card::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 360px; height: 360px; background: radial-gradient(circle, rgba(37,99,235,.22) 0%, transparent 70%); pointer-events: none; }
+        .cta-title { font-family: 'Merriweather', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 300; color: #fff; line-height: 1.3; margin-bottom: 12px; position: relative; z-index: 1; }
+        .cta-title strong { font-weight: 700; }
+        .cta-sub { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.65; margin-bottom: 32px; max-width: 360px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+        .cta-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+
+        /* Footer */
+        footer { background: #0a0f1a; padding: 40px 24px; border-top: 1px solid rgba(255,255,255,.05); }
+        .foot-in { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .foot-brand { font-family: 'Merriweather', serif; font-size: .88rem; font-weight: 700; color: rgba(255,255,255,.5); display: flex; align-items: center; gap: 7px; }
+        .foot-right { text-align: right; }
+        .foot-regs { font-size: .75rem; font-weight: 600; color: rgba(255,255,255,.25); display: flex; gap: 14px; justify-content: flex-end; margin-bottom: 4px; }
+        .foot-copy { font-size: .7rem; color: rgba(255,255,255,.15); }
+
+        /* WA float */
+        .wa { position: fixed; bottom: 22px; right: 22px; z-index: 99; background: #25D366; border-radius: 100px; padding: 11px 20px; display: flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px rgba(37,211,102,.35); text-decoration: none; color: #fff; font-weight: 600; font-size: .82rem; transition: transform .2s, box-shadow .2s; }
+        .wa:hover { transform: scale(1.05); box-shadow: 0 10px 28px rgba(37,211,102,.45); }
+
+        /* Reveal */
+        .r { opacity: 0; transform: translateY(24px); transition: opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+        .r.v { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .r { opacity: 1; transform: none; transition: none; }
+            .dots span { animation: none; opacity: 1; }
+            .spec-card, .spec-bg { transition: none; }
         }
     </style>
-    <!-- Meta Pixel Code -->
+
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '792002367314560');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','792002367314560');
+    fbq('track','PageView');
     </script>
-    <!-- End Meta Pixel Code -->
-    <!-- End Meta Pixel Code -->
 </head>
-<body class="bg-white dark:bg-background-dark text-[#111418] dark:text-white font-body overflow-x-hidden loading">
+<body class="loading">
 
-    
-    <!-- Preloader -->
-    <div id="preloader">
-        <span class="loader"></span>
+<div id="preloader" role="status" aria-label="Cargando">
+    <div class="dots"><span></span><span></span><span></span></div>
+</div>
+
+<nav>
+    <div class="nav-in">
+        <a href="index.html"><img src="logosinfondo.webp" alt="Dr. Juan Tessari" class="nav-logo" width="600" height="600" fetchpriority="high"></a>
+        <button class="btn btn-blue" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">Agendar Consulta</button>
     </div>
-    
-    <!-- Header -->
-    <header class="w-full bg-white text-[#111418] sticky top-0 z-50 shadow-md">
-        <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-10 py-2">
-            <a href="#" class="block">
-                <img src="logosinfondo.webp" alt="Dr. Juan Tessari" width="600" height="600" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity scale-125 ml-2">
+</nav>
+
+<main>
+
+    <!-- TOP: intro + cards -->
+    <section class="top-section">
+        <div class="top-intro r">
+            <span class="top-cursive">Dr. Juan Tessari</span>
+            <h1 class="top-heading">¿En qué podemos <strong>ayudarte?</strong></h1>
+            <p class="top-sub">Seleccioná el área que mejor describe lo que buscás</p>
+        </div>
+
+        <div class="cards-wrap">
+
+            <!-- Hombro & Rodilla -->
+            <a href="rodilla-hombro.html" class="spec-card r d1" onclick="fbq('trackCustom','click_hombro_rodilla')" aria-label="Hombro y Rodilla">
+                <div class="spec-bg" style="background-image:url('doctor.webp');"></div>
+                <div class="spec-overlay" style="background:linear-gradient(170deg,rgba(8,12,28,.05) 0%,rgba(8,12,28,.5) 40%,rgba(8,12,28,.95) 100%);"></div>
+                <div class="spec-body">
+                    <span class="spec-tag">
+                        <span class="material-symbols-outlined" style="font-size:12px;" aria-hidden="true">orthopedics</span>
+                        Traumatología
+                    </span>
+                    <h2 class="spec-title">Hombro<br>&amp; Rodilla</h2>
+                    <p class="spec-desc">Cirugía artroscópica, terapias biológicas y tratamientos de vanguardia. Recuperá tu movimiento.</p>
+                    <ul class="spec-bullets">
+                        <li><span class="dot"></span>+2.000 cirugías exitosas</li>
+                        <li><span class="dot"></span>Terapias regenerativas con plasma</li>
+                        <li><span class="dot"></span>Caballito &amp; Canning · Online</li>
+                    </ul>
+                    <span class="spec-cta">
+                        Ver más
+                        <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">arrow_forward</span>
+                    </span>
+                </div>
             </a>
-            <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
-                Agendar Cita
-            </button>
+
+            <!-- Optimización -->
+            <a href="optimizacion.html" class="spec-card r d2" onclick="fbq('trackCustom','click_optimizacion')" aria-label="Optimización Biológica">
+                <div class="spec-bg" style="background:linear-gradient(140deg,#0a1628 0%,#0c1f40 45%,#0a2a54 100%);"></div>
+                <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.3) 0%,transparent 70%);top:-50px;right:-50px;pointer-events:none;" aria-hidden="true"></div>
+                <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,.18) 0%,transparent 70%);bottom:60px;left:-30px;pointer-events:none;" aria-hidden="true"></div>
+                <div class="spec-overlay" style="background:linear-gradient(170deg,transparent 0%,rgba(5,10,24,.55) 55%,rgba(5,10,24,.97) 100%);"></div>
+                <div class="spec-body">
+                    <span class="spec-tag">
+                        <span class="material-symbols-outlined" style="font-size:12px;" aria-hidden="true">science</span>
+                        Medicina Funcional
+                    </span>
+                    <h2 class="spec-title">Optimización<br>Biológica</h2>
+                    <p class="spec-desc">Tu chequeo dice que estás bien. Tu cuerpo siente otra cosa. Descubrí por qué y recuperá tu vitalidad.</p>
+                    <ul class="spec-bullets">
+                        <li><span class="dot"></span>Diagnóstico hormonal y metabólico</li>
+                        <li><span class="dot"></span>Plan personalizado de optimización</li>
+                        <li><span class="dot"></span>Videoconsulta desde cualquier lugar</li>
+                    </ul>
+                    <span class="spec-cta">
+                        Ver más
+                        <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">arrow_forward</span>
+                    </span>
+                </div>
+            </a>
+
         </div>
-    </header>
+    </section>
 
-    <main class="flex flex-col w-full">
-        <!-- Hero Section -->
-        <section class="bg-[#0f172a] w-full pt-12 md:pt-20 pb-20 md:pb-24 relative">
-            <div class="max-w-6xl mx-auto flex flex-col items-center gap-6 mb-10 relative z-10 px-4">
-                
-                <p class="text-white font-cursive font-light text-[1.9rem] md:text-4xl text-center drop-shadow-sm opacity-90 pb-2">
-                    <span class="border-b-[1px] border-white border-accent/60 pb-1">Dr. Juan Tessari</span>
-                </p>
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-inner r">
+            <div class="stat"><p class="stat-n">+20.000</p><p class="stat-l">Pacientes atendidos</p></div>
+            <div class="stat"><p class="stat-n">18+</p><p class="stat-l">Años de trayectoria</p></div>
+            <div class="stat"><p class="stat-n">+2.000</p><p class="stat-l">Cirugías exitosas</p></div>
+            <div class="stat"><p class="stat-n">🌎</p><p class="stat-l">Atención internacional</p></div>
+        </div>
+    </section>
 
-                <h1 class="text-white text-2xl md:text-5xl font-light tracking-wide leading-tight text-center max-w-4xl font-display">
-                    Más de 18 años devolviendo la calidad de vida a mis pacientes.
-                </h1>
-                
-                <p class="text-gray-300 text-md md:text-xl font-body text-center mt-2 ">
-                    Especialista en Hombro, Rodilla y Terapias Biológicas
-                </p>
-                
-                <!-- Desktop Button (Restored Position) -->
-                <div class="hidden md:block mt-8">
-                     <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
-                        Agendar una Consulta
-                    </button>
-                </div>
+    <!-- About -->
+    <section class="about-section">
+        <div class="about-inner">
+            <div class="about-photo-wrap r">
+                <img src="doctor.webp" alt="Dr. Juan Tessari en consultorio" class="about-photo" width="853" height="1280" loading="lazy">
             </div>
-            
-            <div class="max-w-[1000px] mx-auto relative z-20 px-4 flex flex-col gap-4 mb-[-2rem] md:mb-[-14rem]">
-                <!-- HTML5 Video Container -->
-                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black relative group">
-<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/jaikc9292z.js" async type="module"></script><style>wistia-player[media-id='jaikc9292z']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/jaikc9292z/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="jaikc9292z" aspect="1.7777777777777777"></wistia-player>
-                </div>
-                
-                <!-- Mobile Button Only -->
-                <div class="flex flex-col items-center w-full mt-8 mb-12 md:hidden gap-3">
-                    <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
-                        Agendar una Consulta
-                    </button>
-                    <div class="text-xs text-gray-400 font-medium flex flex-col items-center gap-1">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span> +20.000 Pacientes</span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span> +18 Años Exp.</span>
-                    </div>
-                </div>
-
-
-
-                <!-- Desktop Absolute Stats -->
-                <div class="hidden md:block">
-                    <!-- Stats 1: Top Left -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute -top-4 -left-12">
-                        <div class="bg-blue-50 p-1.5 rounded-full text-blue-600">
-                            <span class="material-symbols-outlined text-xl">verified</span>
-                        </div>
-                        <div>
-                            <p class="text-base font-bold text-gray-800 leading-tight">+20000</p>
-                            <p class="text-xs text-gray-500 font-medium leading-tight">Pacientes</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Stats 2: Right Middle -->
-                    <div class="bg-white rounded-lg p-3 shadow-lg flex items-center gap-3 border border-white/20 absolute top-1/2 -right-16 -translate-y-1/2">
-                        <div class="bg-indigo-50 p-1.5 rounded-full text-indigo-600">
-                            <span class="material-symbols-outlined text-xl">workspace_premium</span>
-                        </div>
-                        <div>
-                            <p class="text-base font-bold text-gray-800 leading-tight">18 Años</p>
-                            <p class="text-xs text-gray-500 font-medium leading-tight">de Trayectoria</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </section>
-
-        <!-- About Section (Restored Position) -->
-        <section class="w-full bg-white dark:bg-background-dark py-24 md:pt-64 md:pb-36 px-6 lg:px-12 -mt-1 relative z-10">
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-8">
-                    <div class="space-y-6">
-                        <h2 class="text-[1.65rem] md:text-[1.65rem] font-semibold tracking-tight font-display text-gray-900 dark:text-white leading-tight">
-                            Estimado Paciente
-                        </h2>
-                        
-                        <div class="text-[1.1rem] text-gray-600 dark:text-gray-300 leading-relaxed space-y-6">
-                            <p class="font-bold text-gray-800 dark:text-gray-200">
-                                Si el dolor de Hombro o Rodilla te está impidiendo vivir al 100%...
-                            </p>
-        
-                            <p>
-                                Si los tratamientos que realizaste no dieron resultado.  Y peor aún, si algún médico te sugirió que <strong class="font-bold">"dejes de hacer las actividades que disfrutás o que simplemente te acostumbres a vivir con dolor"</strong>...
-                            </p>
-                            
-                            <p class="font-bold text-primary text-xl">
-                                Dejame decirte que NO estás solo.
-                            </p>
-
-                            <p>
-                                Cada semana recibo pacientes frustrados que piensan que no hay solución para sus limitaciones. Y casi siempre me dicen lo mismo: <strong class="font-bold text-gray-900 dark:text-white">"Doctor, ojalá hubiera venido antes"</strong>.
-                            </p>
-
-                            <p class="font-bold text-gray-900 dark:text-white">
-                                Muchas veces la cirugía no es la mejor opción
-                            </p>
-
-                            <p class="text-gray-600 dark:text-gray-300">
-                                Yo no trato imágenes, trato <strong>personas</strong>. Y mi objetivo es que vuelvan a <strong class="font-bold text-gray-900 dark:text-white">vivir plenamente</strong> realizando las actividades que más disfrutan, ya sea en su vida cotidiana o en el alto rendimiento deportivo.
-                            </p>
-
-                            <p class="font-bold text-gray-900 dark:text-white text-xl">
-                                Recuperar tu movimiento es posible. Hablemos de cómo hacerlo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Testimonials -->
-        <section class="w-full bg-background-light dark:bg-[#0d131a] py-20 md:py-36">
-            <div class="max-w-[1400px] mx-auto px-6">
-                <h2 class="text-[1.65rem] md:text-[1.65rem] font-semibold tracking-tight font-display text-center text-gray-800 dark:text-white mb-8">
-                    Historias de Recuperación
-                </h2>
-                <!-- Using 3 columns for the real testimonials -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-[1400px] mx-auto">
-                    
-                    <!-- Video 1 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
-                        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rg5haehdz2.js" async type="module"></script><style>wistia-player[media-id='rg5haehdz2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rg5haehdz2/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="rg5haehdz2" aspect="0.5625"></wistia-player>
-                    </div>
-
-                   
-
-                    <!-- Video 3 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
-<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/cpeb93lu88.js" async type="module"></script><style>wistia-player[media-id='cpeb93lu88']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cpeb93lu88/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="cpeb93lu88" aspect="0.5625"></wistia-player>                    </div>
-
-                     <!-- Video 2 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
-<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/s7g9gnvq7v.js" async type="module"></script><style>wistia-player[media-id='s7g9gnvq7v']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/s7g9gnvq7v/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="s7g9gnvq7v" aspect="0.5625"></wistia-player>                    </div>
-                    
-                    <!-- Video 4 -->
-                    <div class="rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800">
-<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/lajczsw1pb.js" async type="module"></script><style>wistia-player[media-id='lajczsw1pb']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lajczsw1pb/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="lajczsw1pb" aspect="0.5625"></wistia-player>                    </div>
-
-                </div>
-                </div>
-            </div>
-        </section>
-
-
-          <!-- Use ID Contacto here -->
-        <section id="contacto" class="w-full bg-white dark:bg-[#0f172a] py-24 md:py-36 border-t border-gray-100 dark:border-gray-800">
-            <div class="max-w-[1050px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                
-                <div class="flex flex-col gap-8">
-                    <h2 class="text-[1.65rem] md:text-[1.65rem] font-semibold tracking-tight font-display text-gray-900 dark:text-white leading-tight">
-                        Videoconsultas: <span class="text-primary">Evaluación por un experto desde tu casa</span>
-                    </h2>
-
-                    <div class="space-y-6 text-[1.1rem] text-gray-700 dark:text-gray-300">
-                        <p>
-                            La tecnología hoy nos permite acortar distancias sin perder calidad médica. A través de una videollamada, puedo evaluar tu caso, revisar tus estudios (resonancias, radiografías) y definir el mejor tratamiento para vos.
-                        </p>
-                        
-                        <ul class="space-y-4 mt-4">
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
-                                <span><strong>Ahorro de tiempo y traslados:</strong> Ideal si vivís lejos, tenés poco tiempo o querés una valoración especializada sin demora en los turnos.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
-                                <span><strong>Misma validez:</strong> Ideal para segundas opiniones y planificación quirúrgica.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
-                                <span><strong>Examen físico:</strong> Si es indispensable una evaluación física presencial coordinamos una visita prioritaria</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800 p-8 lg:p-12 rounded-2xl shadow-2xl border-2 border-gray-300 dark:border-gray-600 relative flex flex-col justify-center items-center text-center">
-                   
-                        <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary">
-                            <span class="material-symbols-outlined text-4xl">calendar_month</span>
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                            Solicitá tu turno online
-                        </h3>
-
-                        <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-sm">
-                            Elegí la sede más cercana o reservá una videoconsulta de forma rápida y sencilla.
-                        </p>
-
-                        <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
-                        Solicitar un Turno
-                    </button>
-                    
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre Mí Section (New) -->
-        <section class="w-full bg-background-light dark:bg-[#0d131a] py-24 md:py-36 px-6 lg:px-12 border-t border-gray-200 dark:border-gray-800">
-            <div class="max-w-5xl mx-auto flex flex-col-reverse gap-8 md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Text -->
-                <div class="space-y-6">
-                    <h2 class="text-[1.65rem] md:text-[1.65rem] font-semibold tracking-tight font-display text-gray-900 dark:text-white leading-tight">
-                        Sobre el Dr. Juan Tessari
-                    </h2>
-                    <div class="text-base text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
-                       <p class="font-medium text-[1.1rem] text-primary">Traumatólogo Especialista en Hombro, Rodilla y Terapias Biológicas</p>
-                       <p>Lidero un equipo enfocado en devolver la calidad de vida a mis pacientes, combinando <strong class="text-gray-900 dark:text-white">más de 18 años de experiencia con calidez humana</strong>.</p>
-                       <p>Me formé en los centros más prestigiosos del país y continúo actualizándome constantemente en las <strong class="text-gray-900 dark:text-white">últimas técnicas regenerativas y quirúrgicas</strong> mínimamente invasivas para ofrecerte siempre la <strong class="text-gray-900 dark:text-white">mejor opción</strong>.</p>
-                       <p>Mi compromiso es brindarte un <strong class="text-gray-900 dark:text-white">diagnóstico preciso, explicaciones claras y el plan de tratamiento adecuado</strong> para que vuelvas a <strong class="text-gray-900 dark:text-white">a sentirte pleno</strong>.</p>
-                    </div>
-                     <div class="pt-6">
-                        <div class="bg-gray-50 dark:bg-gray-800/50 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 space-y-3">
-                            <p class="text-base font-bold text-gray-900 dark:text-white">Especialista en Ortopedia y Traumatología</p>
-                            <div class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                                <p>Cirujano Artroscopista</p>
-                                <p>Miembro de la Asociación Argentina de Ortopedia y Traumatología</p>
-                                <p>Miembro de la Asociación Argentina de Artroscopía</p>
-                                <p>Miembro de la Asociación de Terapias Ortopédicas Biológicas de Argentina</p>
-                            </div>
-                            <div class="pt-3 border-t border-gray-300 dark:border-gray-600 flex gap-4">
-                                <p class="text-sm font-bold text-primary">MN 130.017</p>
-                                <p class="text-sm font-bold text-primary">MP 340.490</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Image -->
-                <div class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl group border-4 border-white dark:border-gray-700">
-                     <img src="doctor.webp" alt="Dr. Juan Tessari" width="853" height="1280" loading="lazy" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700">
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="w-full bg-[#0f172a] py-20 md:py-36 px-6">
-            <div class="max-w-[800px] mx-auto">
-                <h2 class="text-[1.65rem] md:text-[1.65rem] font-semibold tracking-tight font-display text-white mb-10 text-left">Preguntas Frecuentes</h2>
-                <div class="flex flex-col gap-4">
-                    <!-- FAQ: Prepagas -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Atienden Prepagas y Obras Sociales?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn">
-                                Trabajamos en forma particular y con la mayoría de las prepagas y obras sociales del país. Podés consultarnos por WhatsApp si lo hacemos con la que vos contás.
-                            </div>
-                        </details>
-                    </div>
-                    <!-- FAQ: PAMI -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Atienden PAMI?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn space-y-3">
-                                <p>Lamentablemente no atendemos PAMI.</p>
-                                <p>Recibimos a diario muchas consultas de pacientes con PAMI a los cuales les dijeron que su única opción de tratamiento es colocar una prótesis o que deben acostumbrarse a vivir con dolor.</p>
-                                <p>En estos casos hacemos una consulta en forma particular, la cual puede ser presencial o mediante Videollamada para tener una segunda opinión especializada.</p>
-                            </div>
-                        </details>
-                    </div>
-                    <!-- FAQ: Operarse -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Operarse es la única opción?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn">
-                                No. Priorizamos tratamientos conservadores. <strong>Indicamos cirugía solo si es indispensable.</strong>
-                            </div>
-                        </details>
-                    </div>
-                    <!-- FAQ: Plasma Rico en Plaquetas -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Qué es el Plasma Rico en Plaquetas?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn space-y-3">
-                                <p>Es una <strong>Terapia Biológica</strong> en la cual se utiliza la propia sangre del paciente para regenerar o reparar tejidos.</p>
-                                <p>Se realiza en forma ambulatoria y todo el proceso dura aproximadamente <strong>45 minutos</strong>.</p>
-                                <p>Los usos más frecuentes en Traumatología son:</p>
-                                <ul class="list-disc list-inside space-y-1 pl-2">
-                                    <li>Lesiones osteoarticulares</li>
-                                    <li>Lesiones tendinosas</li>
-                                    <li>Lesiones ligamentarias</li>
-                                    <li>Desgarros musculares</li>
-                                </ul>
-                                <p>Para más información contactate por WhatsApp.</p>
-                            </div>
-                        </details>
-                    </div>
-                    <!-- FAQ: Recuperación -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Cuánto dura la recuperación?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn">
-                                Depende de cada caso y tratamiento. Utilizamos técnicas modernas basadas en el movimiento como base de rehabilitación para que vuelvas a tu actividad lo antes posible.
-                            </div>
-                        </details>
-                    </div>
-                    <!-- FAQ: Medios de pago -->
-                    <div class="border-b border-gray-700 py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-white text-[1.1rem] md:text-xl">
-                                <span>¿Qué medios de pago aceptan?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined">expand_more</span>
-                                </span>
-                            </summary>
-                            <div class="text-gray-200 mt-4 text-base md:text-[1.1rem] leading-relaxed group-open:animate-fadeIn">
-                                Aceptamos efectivo, transferencias y tarjetas.
-                            </div>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-      
-
-       
-
-        <!-- Final CTA Section (Modern Card) -->
-        <section class="w-full bg-white dark:bg-background-dark py-20 px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-[#1e293b] rounded-3xl p-8 md:p-12 shadow-2xl text-center relative overflow-hidden border border-gray-700">
-                    <!-- Decor element -->
-                    <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary opacity-10 rounded-full blur-3xl"></div>
-                    
-                    <div class="relative z-10 space-y-8">
-                        <h2 class="text-2xl md:text-[1.65rem] font-semibold tracking-tight font-display text-white leading-tight">
-                            ¿Estás listo para dar el primer paso?
-                        </h2>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 w-full md:w-auto">
-                             <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
-                        Agendar una Consulta
-                    </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-
-
-
-    <!-- Footer -->
-    <footer class="w-full bg-[#0f172a] py-12 text-gray-400 text-sm font-body border-t border-gray-800">
-        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div class="flex items-center gap-2 text-white">
-                <span class="material-symbols-outlined text-2xl">medical_services</span>
-                <span class="font-bold text-[1.1rem] font-display">Dr. Juan Tessari</span>
-            </div>
-            
-            <div class="flex flex-col md:items-end gap-2">
-                <div class="flex gap-4 font-bold text-gray-300">
-                    <span>MN 130017</span>
-                    <span>MP 340490</span>
-                </div>
-                <div class="flex flex-col gap-1">
-                    <p>© 2026 Dr. Juan Tessari. Todos los derechos reservados.</p>
+            <div class="r d2">
+                <span class="eyebrow eyebrow-light">Quién soy</span>
+                <h2 class="about-title">18 años devolviendo la calidad de vida<br><strong>a mis pacientes.</strong></h2>
+                <p class="about-body">Combino experiencia clínica con las técnicas más avanzadas de la medicina, para acompañarte tanto en la recuperación de una lesión como en llevar tu bienestar al siguiente nivel.</p>
+                <p class="about-body">Mi compromiso es que cada paciente entienda su cuerpo y tenga un plan claro para vivir mejor.</p>
+                <div class="chips">
+                    <span class="chip"><span class="material-symbols-outlined" aria-hidden="true">orthopedics</span>Traumatólogo · Cirujano</span>
+                    <span class="chip"><span class="material-symbols-outlined" aria-hidden="true">science</span>Medicina Funcional</span>
+                    <span class="chip">MN 130.017 · MP 340.490</span>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-card r">
+            <h2 class="cta-title">¿No sabés<br><strong>por dónde empezar?</strong></h2>
+            <p class="cta-sub">Escribinos por WhatsApp. Te orientamos sin compromiso.</p>
+            <div class="cta-btns">
+                <button class="btn btn-wa" onclick="sendWA()">
+                    <span class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true">chat</span>
+                    Consultar por WhatsApp
+                </button>
+                <button class="btn btn-blue" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">
+                    Agendar Consulta
+                </button>
+            </div>
+        </div>
+    </section>
 
+</main>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="#" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20db5b] text-white px-3 py-2 md:px-4 md:py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 group" onclick="event.preventDefault(); sendWhatsAppEvent();">
-        <span class="material-symbols-outlined text-xl md:text-2xl">chat</span>
-        <span class="font-bold text-xs md:text-base">Consultas?</span>
-    </a>
+<footer>
+    <div class="foot-in">
+        <div class="foot-brand">
+            <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">medical_services</span>
+            Dr. Juan Tessari
+        </div>
+        <div class="foot-right">
+            <div class="foot-regs"><span>MN 130.017</span><span>MP 340.490</span></div>
+            <p class="foot-copy">&copy; 2026 Dr. Juan Tessari. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
-    <script src="js/app.js"></script>
+<a class="wa" href="#" onclick="event.preventDefault();sendWA()" aria-label="Consultar por WhatsApp">
+    <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">chat</span>
+    <span>Consultas</span>
+</a>
 
-    <script>
-    function sendWhatsAppEvent() {
-      try {
-        if (typeof fbq === 'function') {
-          fbq('track', 'Contact');
-        }
-      } catch (e) {
-        console.log('Pixel no cargado');
-      }
-
-      setTimeout(function() {
-        window.open("https://api.whatsapp.com/send?phone=5491126882414&text=Hola%20Dr.%20Tessari,%20tengo%20una%20consulta.", "_blank");
-      }, 700);
+<script>
+    window.addEventListener('load', function() {
+        var pl = document.getElementById('preloader');
+        pl.style.opacity = '0';
+        document.body.classList.remove('loading');
+        setTimeout(function(){ pl.style.display='none'; }, 500);
+    });
+    function sendWA() {
+        try{ fbq('track','Contact'); }catch(e){}
+        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20tengo%20una%20consulta.','_blank'); }, 300);
     }
-    </script>
+    var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.r').forEach(function(el){ obs.observe(el); });
+</script>
+
 </body>
 </html>

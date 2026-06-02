@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Dr. Juan Tessari — Optimización Biológica. Medicina de vanguardia para recuperar tu energía, vitalidad y rendimiento. Videoconsulta desde donde estés.">
+    <title>Dr. Juan Tessari | Optimización Biológica</title>
+    <link rel="icon" href="logosinfondo.webp" type="image/webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fast.wistia.com"/>
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/ddrsdqh4le.js" async type="module"></script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --white:  #ffffff;
+            --light:  #f5f5f7;
+            --dark:   #0f172a;
+            --blue:   #2563eb;
+            --blue-d: #1d4ed8;
+            --text:   #1d1d1f;
+            --text-2: #6e6e73;
+            --text-3: #86868b;
+            --r:      22px;
+        }
+
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        @media (max-width: 768px) { html { font-size: 15px; } }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+        body.loading { overflow: hidden; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--light); }
+        ::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 3px; }
+
+        /* Preloader */
+        #preloader { position: fixed; inset: 0; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity .5s; }
+        .dots { display: flex; gap: 7px; }
+        .dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); animation: dot 1.2s ease-in-out infinite; }
+        .dots span:nth-child(2) { animation-delay: .2s; }
+        .dots span:nth-child(3) { animation-delay: .4s; }
+        @keyframes dot { 0%,80%,100%{transform:scale(.5);opacity:.3} 40%{transform:scale(1);opacity:1} }
+
+        /* Nav */
+        nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid rgba(0,0,0,.08); }
+        .nav-in { max-width: 1100px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { height: 38px; width: auto; display: block; transition: opacity .2s; }
+        .nav-logo:hover { opacity: .7; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .8rem; padding: 9px 20px; border-radius: 980px; border: none; cursor: pointer; transition: all .2s; text-decoration: none; letter-spacing: -.01em; }
+        .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,.3); }
+        .btn-blue:hover { background: var(--blue-d); transform: translateY(-1px); }
+        .btn-outline-w { background: transparent; border: 1.5px solid rgba(255,255,255,.25); color: #fff; }
+        .btn-outline-w:hover { border-color: rgba(255,255,255,.5); }
+
+        /* Utility */
+        .container { max-width: 1040px; margin: 0 auto; }
+        .container-sm { max-width: 740px; margin: 0 auto; }
+
+        /* ── HERO ── */
+        .hero { background: var(--dark); padding: 72px 24px 80px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,.1) 0%, transparent 70%); pointer-events: none; }
+        .hero-in { max-width: 760px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+
+        .hero-cursive { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: rgba(255,255,255,.4); display: block; margin-bottom: 16px; }
+        .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(37,99,235,.15); border: 1px solid rgba(37,99,235,.3); color: #93c5fd; font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
+        .hero-tag .material-symbols-outlined { font-size: 12px; }
+
+        .hero-title { font-family: 'Merriweather', serif; font-size: clamp(1.28rem, 4.2vw, 2.8rem); font-weight: 300; line-height: 1.22; letter-spacing: -.025em; color: #fff; margin-bottom: 18px; }
+        .hero-title strong { font-weight: 700; }
+        @media (max-width: 768px) {
+            .hero-title { font-size: clamp(1.38rem, 5vw, 2.8rem); }
+        }
+
+        .hero-sub { font-size: .95rem; color: rgba(255,255,255,.5); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+
+        .hero-cta-note { margin-top: 10px; font-size: .72rem; color: rgba(255,255,255,.22); letter-spacing: .03em; }
+
+        /* Video — clean separation, no overlap */
+        .hero-video-section { background: var(--dark); padding: 0 24px 72px; }
+        .hero-video-wrap { max-width: 860px; margin: 0 auto; position: relative; }
+        .hero-video-frame { border-radius: var(--r); overflow: hidden; background: #000; aspect-ratio: 16/9; box-shadow: 0 32px 72px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); }
+        .hero-video-frame wistia-player { width: 100%; display: block; }
+        wistia-player[media-id='ddrsdqh4le']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ddrsdqh4le/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+        }
+
+        /* Section divider */
+        .divider { height: 1px; background: rgba(0,0,0,.07); margin: 0; }
+
+        /* ── SECTIONS ── */
+        .sec-white { background: var(--white); }
+        .sec-dark  { background: var(--dark); }
+
+        .sec { padding: 72px 24px; }
+        .sec-sm { padding: 56px 24px; }
+
+        /* Eyebrow */
+        .ey { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+        .ey-blue { color: var(--blue); }
+        .ey-light { color: rgba(96,165,250,.9); }
+
+        /* Titles */
+        .h2 { font-family: 'Merriweather', serif; font-size: clamp(1.35rem, 2.4vw, 1.9rem); font-weight: 300; line-height: 1.25; letter-spacing: -.02em; margin-bottom: 16px; }
+        .h2 strong { font-weight: 700; }
+        .h2-white { color: #fff; }
+        .h2-dark  { color: var(--text); }
+
+        /* Body */
+        .p { font-size: .92rem; line-height: 1.75; margin-bottom: 14px; }
+        .p-gray { color: var(--text-2); }
+        .p-light { color: rgba(255,255,255,.5); }
+
+        /* ── Problem 2-col ── */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+
+        .callout-box { background: var(--light); border-radius: var(--r); padding: 36px 40px; position: relative; overflow: hidden; }
+        .callout-box::before { content: '\201C'; position: absolute; top: -10px; left: 16px; font-family: 'Merriweather', serif; font-size: 6rem; line-height: 1; color: rgba(37,99,235,.1); pointer-events: none; }
+        .callout-big { font-family: 'Merriweather', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 10px; }
+        .callout-text { font-size: .88rem; color: var(--text-2); line-height: 1.7; }
+        .callout-text strong { color: var(--text); }
+
+        /* ── Symptoms ── */
+        .sym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+        .sym-card { background: var(--white); border: 1px solid rgba(0,0,0,.07); border-radius: 18px; padding: 24px; transition: transform .25s, box-shadow .25s, border-color .25s; }
+        .sym-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,99,235,.09); border-color: rgba(37,99,235,.2); }
+        .sym-icon { width: 44px; height: 44px; background: rgba(37,99,235,.07); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .sym-icon .material-symbols-outlined { color: var(--blue); font-size: 20px; }
+        .sym-title { font-weight: 700; font-size: .88rem; color: var(--text); margin-bottom: 6px; }
+        .sym-desc { font-size: .8rem; color: var(--text-3); line-height: 1.55; }
+
+        /* ── Method ── */
+        .method-step { display: flex; gap: 20px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+        .method-step:last-child { border-bottom: none; }
+        .method-num { width: 48px; height: 48px; flex-shrink: 0; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-d) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .95rem; color: #fff; box-shadow: 0 6px 18px rgba(37,99,235,.35); }
+        .method-title { font-weight: 700; font-size: .92rem; color: #fff; margin-bottom: 6px; }
+        .method-text { font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.7; }
+
+        blockquote { border-left: 3px solid var(--blue); padding: 18px 24px; background: rgba(255,255,255,.03); border-radius: 0 12px 12px 0; margin-top: 40px; }
+        blockquote p { font-family: 'Merriweather', serif; font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.75; font-style: italic; }
+        blockquote footer { margin-top: 10px; font-size: .75rem; color: rgba(96,165,250,.8); font-weight: 600; background: none; border: none; padding: 0; }
+
+        /* ── Testimonials ── */
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .test-card { display: flex; flex-direction: column; }
+        .test-video { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 18px 18px 0 0; border-bottom: none; aspect-ratio: 9/16; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.2); }
+        .test-video .material-symbols-outlined { font-size: 2.8rem; }
+        .test-video p { font-size: .75rem; font-weight: 500; }
+        .test-info { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-top: none; border-radius: 0 0 18px 18px; padding: 18px; }
+        .test-name { font-weight: 700; color: #fff; font-size: .85rem; margin-bottom: 3px; }
+        .test-tag { font-size: .72rem; color: #60a5fa; font-weight: 600; margin-bottom: 10px; }
+        .test-text { font-size: .78rem; color: rgba(255,255,255,.38); line-height: 1.6; }
+
+        /* ── Videoconsulta ── */
+        .vc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+        @media (max-width: 768px) { .vc-grid { grid-template-columns: 1fr; gap: 32px; } }
+        .feat-item { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,.06); }
+        .feat-item:last-child { border-bottom: none; }
+        .feat-icon { width: 38px; height: 38px; flex-shrink: 0; background: rgba(37,99,235,.07); border-radius: 11px; display: flex; align-items: center; justify-content: center; }
+        .feat-icon .material-symbols-outlined { color: var(--blue); font-size: 18px; }
+        .feat-title { font-weight: 700; font-size: .88rem; color: var(--text); margin-bottom: 3px; }
+        .feat-text { font-size: .8rem; color: var(--text-2); line-height: 1.6; }
+
+        .cta-box { background: var(--light); border-radius: var(--r); padding: 40px 32px; text-align: center; border: 1px solid rgba(0,0,0,.05); }
+        .cta-box-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(37,99,235,.08); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+        .cta-box-icon .material-symbols-outlined { color: var(--blue); font-size: 24px; }
+        .cta-box-title { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        .cta-box-text { font-size: .82rem; color: var(--text-2); line-height: 1.6; margin-bottom: 22px; max-width: 220px; margin-left: auto; margin-right: auto; }
+
+        /* ── About split ── */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+        .about-photo { width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: var(--r); display: block; box-shadow: 0 20px 48px rgba(0,0,0,.12); }
+        @media (max-width: 768px) { .about-photo { height: 300px; } }
+        .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+        .chip { display: inline-flex; align-items: center; gap: 5px; background: rgba(37,99,235,.07); color: var(--blue); font-size: .72rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+        .chip .material-symbols-outlined { font-size: 12px; }
+
+        /* ── FAQ ── */
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,.07); }
+        .faq-item:last-child { border-bottom: none; }
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        .faq-sum { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; gap: 14px; }
+        .faq-q { font-weight: 600; font-size: .92rem; color: #fff; line-height: 1.4; }
+        .faq-chev { color: rgba(96,165,250,.7); flex-shrink: 0; transition: transform .3s; }
+        details[open] .faq-chev { transform: rotate(180deg); }
+        .faq-ans { padding-bottom: 18px; font-size: .85rem; color: rgba(255,255,255,.42); line-height: 1.75; }
+
+        /* ── Final CTA ── */
+        .final-cta { background: var(--dark); padding: 96px 24px; text-align: center; position: relative; overflow: hidden; }
+        .final-cta::before { content: ''; position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 320px; background: radial-gradient(ellipse, rgba(37,99,235,.18) 0%, transparent 70%); pointer-events: none; }
+        .final-title { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 14px; position: relative; z-index: 1; }
+        .final-title strong { font-weight: 700; }
+        .final-sub { font-size: .92rem; color: rgba(255,255,255,.4); line-height: 1.7; margin-bottom: 36px; max-width: 400px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+
+        /* Footer */
+        footer { background: #0a0f1a; padding: 40px 24px; border-top: 1px solid rgba(255,255,255,.04); }
+        .foot-in { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .foot-brand { font-family: 'Merriweather', serif; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.45); display: flex; align-items: center; gap: 7px; }
+        .foot-regs { font-size: .72rem; font-weight: 600; color: rgba(255,255,255,.22); display: flex; gap: 14px; justify-content: flex-end; margin-bottom: 4px; }
+        .foot-copy { font-size: .68rem; color: rgba(255,255,255,.13); text-align: right; }
+
+        /* WA */
+        .wa { position: fixed; bottom: 22px; right: 22px; z-index: 99; background: #25D366; border-radius: 100px; padding: 11px 20px; display: flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px rgba(37,211,102,.35); text-decoration: none; color: #fff; font-weight: 600; font-size: .82rem; transition: transform .2s, box-shadow .2s; }
+        .wa:hover { transform: scale(1.05); box-shadow: 0 10px 28px rgba(37,211,102,.45); }
+
+        /* Reveal */
+        .r { opacity: 0; transform: translateY(22px); transition: opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+        .r.v { opacity: 1; transform: none; }
+        .d1{transition-delay:.1s;} .d2{transition-delay:.2s;} .d3{transition-delay:.3s;}
+
+        @media (prefers-reduced-motion: reduce) {
+            .r { opacity: 1; transform: none; transition: none; }
+            .dots span { animation: none; opacity: 1; }
+        }
+    </style>
+
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','792002367314560');
+    fbq('track','PageView');
+    </script>
+</head>
+<body class="loading">
+
+<div id="preloader" role="status" aria-label="Cargando">
+    <div class="dots"><span></span><span></span><span></span></div>
+</div>
+
+<nav>
+    <div class="nav-in">
+        <a href="index.html"><img src="logosinfondo.webp" alt="Dr. Juan Tessari" class="nav-logo" width="600" height="600" fetchpriority="high"></a>
+        <button class="btn btn-blue" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">
+            <span class="material-symbols-outlined" style="font-size:15px;" aria-hidden="true">videocam</span>
+            Agendar Videoconsulta
+        </button>
+    </div>
+</nav>
+
+<main>
+
+    <!-- HERO: texto -->
+    <section class="hero">
+        <div class="hero-in">
+            <span class="hero-cursive">Dr. Juan Tessari</span>
+            <div class="hero-tag r">
+                <span class="material-symbols-outlined" aria-hidden="true">science</span>
+                Optimización Biológica Humana
+            </div>
+            <h1 class="hero-title r d1">
+                Podés hacer todo bien y aún así<br><strong>sentirte lejos de tu tope.</strong>
+            </h1>
+            <p class="hero-sub r d2">
+                Porque el problema muchas veces no está en tus hábitos, sino en cómo responde tu organismo.
+            </p>
+            <div class="r d3">
+                <button class="btn btn-blue" style="font-size:.85rem;padding:11px 26px;" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">
+                    <span class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true">calendar_month</span>
+                    Agendá tu Videoconsulta
+                </button>
+                <p class="hero-cta-note">Sin traslados · Desde cualquier lugar del mundo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO: sección separada con padding propio -->
+    <section class="hero-video-section">
+        <div class="hero-video-wrap r">
+            <div class="hero-video-frame">
+                <wistia-player media-id="ddrsdqh4le" aspect="1.7777777777777777" aria-label="Video — Optimización Biológica con Dr. Juan Tessari"></wistia-player>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL PROBLEMA -->
+    <section class="sec-white sec">
+        <div class="container">
+            <div class="two-col">
+                <div class="r">
+                    <span class="ey ey-blue">El diagnóstico que falta</span>
+                    <h2 class="h2 h2-dark">Tu chequeo anual dice que estás bien.<br><strong>Tu cuerpo siente otra cosa.</strong></h2>
+                    <p class="p p-gray">A partir de los 35, la disfunción metabólica y el descenso hormonal son reales. Pero los análisis de rutina siguen diciendo que está todo bien.</p>
+                    <p class="p p-gray" style="margin-bottom:0;">Fatiga. Bajo rendimiento. Baja libido. Falta de enfoque. El problema no sos vos — es el enfoque del diagnóstico.</p>
+                </div>
+                <div class="callout-box r d2">
+                    <p class="callout-big">99%</p>
+                    <p class="callout-text">de los análisis tradicionales <strong>no evalúan hormonas activas, vitaminas, minerales ni estado inflamatorio sistémico.</strong><br><br>Por eso los papeles dicen una cosa y tu cuerpo siente otra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÍNTOMAS -->
+    <section class="sec-dark sec-sm">
+        <div class="container">
+            <p style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;margin-bottom:32px;" class="r">¿Te identificás con alguno de estos?</p>
+            <div class="sym-grid">
+                <div class="sym-card r">
+                    <div class="sym-icon"><span class="material-symbols-outlined" aria-hidden="true">bolt</span></div>
+                    <p class="sym-title">Fatiga crónica</p>
+                    <p class="sym-desc">Cansancio que no desaparece aunque descanses bien</p>
+                </div>
+                <div class="sym-card r d1">
+                    <div class="sym-icon"><span class="material-symbols-outlined" aria-hidden="true">trending_down</span></div>
+                    <p class="sym-title">Bajo rendimiento</p>
+                    <p class="sym-desc">Físico y mental, incluso entrenando y comiéndote bien</p>
+                </div>
+                <div class="sym-card r d2">
+                    <div class="sym-icon"><span class="material-symbols-outlined" aria-hidden="true">favorite</span></div>
+                    <p class="sym-title">Baja libido</p>
+                    <p class="sym-desc">Descenso hormonal silencioso que pasa desapercibido</p>
+                </div>
+                <div class="sym-card r d3">
+                    <div class="sym-icon"><span class="material-symbols-outlined" aria-hidden="true">psychology</span></div>
+                    <p class="sym-title">Falta de enfoque</p>
+                    <p class="sym-desc">Mente dispersa, dificultad para concentrarte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="sec-white sec">
+        <div class="container-sm">
+            <span class="ey ey-blue r">Mi enfoque</span>
+            <h2 class="h2 h2-dark r d1">Medicina de vanguardia.<br><strong>Aplicada al bienestar real.</strong></h2>
+            <p class="p p-gray r d2" style="margin-bottom:40px;">No trato síntomas. Identifico por qué se están generando y lo corrijo desde la raíz.</p>
+            <div class="r d3">
+                <div class="method-step" style="border-color:rgba(0,0,0,.07);">
+                    <div class="method-num" aria-hidden="true">01</div>
+                    <div>
+                        <p class="method-title" style="color:var(--text);">Diagnóstico de precisión</p>
+                        <p class="method-text" style="color:var(--text-2);">Evalúo hormonas activas, vitaminas, minerales y marcadores inflamatorios que los chequeos convencionales ignoran.</p>
+                    </div>
+                </div>
+                <div class="method-step" style="border-color:rgba(0,0,0,.07);">
+                    <div class="method-num" aria-hidden="true">02</div>
+                    <div>
+                        <p class="method-title" style="color:var(--text);">Identificación del desequilibrio exacto</p>
+                        <p class="method-text" style="color:var(--text-2);">Identifico el disbalance específico de tu metabolismo con la evidencia científica más actualizada.</p>
+                    </div>
+                </div>
+                <div class="method-step" style="border-color:rgba(0,0,0,.07);">
+                    <div class="method-num" aria-hidden="true">03</div>
+                    <div>
+                        <p class="method-title" style="color:var(--text);">Plan de optimización a tu medida</p>
+                        <p class="method-text" style="color:var(--text-2);">Un protocolo diseñado exclusivamente para vos. Tu biología, tu plan.</p>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="r" style="border-left-color:var(--blue);background:var(--light);">
+                <p style="color:var(--text-2);">"No te acostumbres a vivir a medias. Podés volver a sentirte con la energía y la vitalidad para disfrutar cada etapa de tu vida."</p>
+                <footer style="color:var(--blue);">— Dr. Juan Tessari</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="sec-dark sec">
+        <div class="container">
+            <h2 class="h2 h2-white r" style="text-align:center;margin-bottom:8px;">Historias de Optimización</h2>
+            <p style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.28);margin-bottom:44px;" class="r d1">Casos reales de pacientes que recuperaron su vitalidad</p>
+            <div class="test-grid">
+                <div class="test-card r">
+                    <div class="test-video"><span class="material-symbols-outlined">play_circle</span><p>Video próximamente</p></div>
+                    <div class="test-info"><p class="test-name">Paciente, 42 años</p><p class="test-tag">Fatiga + bajo rendimiento deportivo</p><p class="test-text">Descripción del caso: qué síntomas tenía, qué se encontró en el diagnóstico y cómo mejoró con el protocolo.</p></div>
+                </div>
+                <div class="test-card r d1">
+                    <div class="test-video"><span class="material-symbols-outlined">play_circle</span><p>Video próximamente</p></div>
+                    <div class="test-info"><p class="test-name">Paciente, 38 años</p><p class="test-tag">Falta de enfoque + baja libido</p><p class="test-text">Descripción del caso: qué síntomas tenía, qué se encontró en el diagnóstico y cómo mejoró con el protocolo.</p></div>
+                </div>
+                <div class="test-card r d2">
+                    <div class="test-video"><span class="material-symbols-outlined">play_circle</span><p>Video próximamente</p></div>
+                    <div class="test-info"><p class="test-name">Paciente, 47 años</p><p class="test-tag">Descenso hormonal + fatiga crónica</p><p class="test-text">Descripción del caso: qué síntomas tenía, qué se encontró en el diagnóstico y cómo mejoró con el protocolo.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOCONSULTA -->
+    <section class="sec-white sec">
+        <div class="container">
+            <div class="vc-grid">
+                <div class="r">
+                    <span class="ey ey-blue">Consulta virtual</span>
+                    <h2 class="h2 h2-dark">Estés donde estés,<br><strong>podés iniciar hoy.</strong></h2>
+                    <p class="p p-gray" style="margin-bottom:28px;">A través de una videollamada evalúo tu caso, reviso tus estudios y diseñamos tu plan. Todo 100% remoto.</p>
+                    <div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><span class="material-symbols-outlined" aria-hidden="true">public</span></div>
+                            <div><p class="feat-title">Desde cualquier lugar del mundo</p><p class="feat-text">Sin importar en qué país estés.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><span class="material-symbols-outlined" aria-hidden="true">schedule</span></div>
+                            <div><p class="feat-title">Sin esperas ni traslados</p><p class="feat-text">Reservás y te conectás desde donde estés.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><span class="material-symbols-outlined" aria-hidden="true">task_alt</span></div>
+                            <div><p class="feat-title">Plan desde el primer día</p><p class="feat-text">Al terminar tenés un protocolo claro.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-box r d2">
+                    <div class="cta-box-icon"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span></div>
+                    <p class="cta-box-title">Agendá tu turno</p>
+                    <p class="cta-box-text">Reservá tu videoconsulta. Te contactamos a la brevedad.</p>
+                    <button class="btn btn-blue" style="width:100%;justify-content:center;" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">Reservar mi Lugar</button>
+                    <p style="margin-top:12px;font-size:.7rem;color:var(--text-3);">Te espero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE EL DR -->
+    <section class="sec-dark sec" style="border-top:1px solid rgba(255,255,255,.05);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="r">
+                    <img src="doctor.webp" alt="Dr. Juan Tessari" class="about-photo" width="853" height="1280" loading="lazy">
+                </div>
+                <div class="r d2">
+                    <span class="ey ey-light">Quién soy</span>
+                    <h2 class="h2 h2-white">Soy el<br><strong>Dr. Juan Tessari.</strong></h2>
+                    <p class="p p-light">A diario recibo pacientes que se cuidan, entrenan y comen bien, pero sufren en silencio el impacto del declive biológico.</p>
+                    <p class="p p-light">Mi especialidad es esa brecha: el espacio entre "estar sano" y funcionar en tu máxima versión. Más de 18 años de trayectoria y evidencia científica actualizada.</p>
+                    <div class="chips" style="--chip-bg:rgba(37,99,235,.15);">
+                        <span class="chip" style="background:rgba(37,99,235,.15);color:#93c5fd;"><span class="material-symbols-outlined" aria-hidden="true">science</span>Medicina Funcional</span>
+                        <span class="chip" style="background:rgba(37,99,235,.15);color:#93c5fd;"><span class="material-symbols-outlined" aria-hidden="true">biotech</span>Optimización Metabólica</span>
+                        <span class="chip" style="background:rgba(37,99,235,.15);color:#93c5fd;"><span class="material-symbols-outlined" aria-hidden="true">videocam</span>Consulta Internacional</span>
+                    </div>
+                    <div style="margin-top:24px;">
+                        <button class="btn btn-blue" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">Agendá tu Consulta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec-white sec">
+        <div class="container-sm">
+            <h2 class="h2 h2-dark r" style="margin-bottom:36px;">Preguntas Frecuentes</h2>
+            <div class="r d1">
+                <div class="faq-item" style="border-color:rgba(0,0,0,.07);">
+                    <details><summary class="faq-sum"><span class="faq-q" style="color:var(--text);">¿Para quién es esta consulta?</span><span class="material-symbols-outlined faq-chev" style="color:var(--blue);" aria-hidden="true">expand_more</span></summary><p class="faq-ans" style="color:var(--text-2);">Para hombres y mujeres a partir de los 30–35 años que se cuidan pero sienten que su rendimiento, energía o libido no están donde deberían. También para quienes buscan un enfoque preventivo.</p></details>
+                </div>
+                <div class="faq-item" style="border-color:rgba(0,0,0,.07);">
+                    <details><summary class="faq-sum"><span class="faq-q" style="color:var(--text);">¿En qué se diferencia de un chequeo médico común?</span><span class="material-symbols-outlined faq-chev" style="color:var(--blue);" aria-hidden="true">expand_more</span></summary><p class="faq-ans" style="color:var(--text-2);">Un chequeo convencional busca enfermedades. Este enfoque evalúa si tu organismo está funcionando en su nivel óptimo: hormonas activas, vitaminas, minerales y marcadores inflamatorios que la rutina no incluye.</p></details>
+                </div>
+                <div class="faq-item" style="border-color:rgba(0,0,0,.07);">
+                    <details><summary class="faq-sum"><span class="faq-q" style="color:var(--text);">¿Cómo funciona la videoconsulta?</span><span class="material-symbols-outlined faq-chev" style="color:var(--blue);" aria-hidden="true">expand_more</span></summary><p class="faq-ans" style="color:var(--text-2);">Reservás tu turno a través del formulario. Nos conectamos por videollamada, evaluamos tu caso y definimos tu protocolo de optimización. Todo puede gestionarse 100% remoto.</p></details>
+                </div>
+                <div class="faq-item" style="border-color:rgba(0,0,0,.07);">
+                    <details><summary class="faq-sum"><span class="faq-q" style="color:var(--text);">¿Necesito estudios previos?</span><span class="material-symbols-outlined faq-chev" style="color:var(--blue);" aria-hidden="true">expand_more</span></summary><p class="faq-ans" style="color:var(--text-2);">No es obligatorio. En la primera consulta evalúo tu situación y te indico exactamente qué analizar.</p></details>
+                </div>
+                <div class="faq-item" style="border-color:rgba(0,0,0,.07);border-bottom:none;">
+                    <details><summary class="faq-sum"><span class="faq-q" style="color:var(--text);">¿Atendés fuera de Argentina?</span><span class="material-symbols-outlined faq-chev" style="color:var(--blue);" aria-hidden="true">expand_more</span></summary><p class="faq-ans" style="color:var(--text-2);">Sí. La videoconsulta permite atender desde cualquier lugar del mundo. Todo el proceso es completamente remoto.</p></details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="r" style="position:relative;z-index:1;">
+            <h2 class="final-title">Dejá de normalizar<br><strong>vivir sin energía.</strong></h2>
+            <p class="final-sub">Recuperá tu vitalidad. Volvé a sentirte con la potencia que sabés que podés tener.</p>
+            <button class="btn btn-blue" style="font-size:.88rem;padding:12px 28px;" onclick="fbq('trackCustom','click_agendar');setTimeout(()=>location.href='formulario.html',300)">
+                <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">videocam</span>
+                Agendá tu Videoconsulta
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="foot-in">
+        <div class="foot-brand">
+            <span class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true">medical_services</span>
+            Dr. Juan Tessari
+        </div>
+        <div>
+            <div class="foot-regs"><span>MN 130.017</span><span>MP 340.490</span></div>
+            <p class="foot-copy">&copy; 2026 Dr. Juan Tessari. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<a class="wa" href="#" onclick="event.preventDefault();sendWA()" aria-label="Consultas por WhatsApp">
+    <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">chat</span>
+    <span>Consultas</span>
+</a>
+
+<script>
+    window.addEventListener('load', function() {
+        var pl = document.getElementById('preloader');
+        pl.style.opacity = '0';
+        document.body.classList.remove('loading');
+        setTimeout(function(){ pl.style.display='none'; }, 500);
+    });
+
+    function sendWA() {
+        try{ fbq('track','Contact'); }catch(e){}
+        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20quiero%20consultar%20sobre%20optimizaci%C3%B3n%20biol%C3%B3gica.','_blank'); }, 300);
+    }
+
+    document.querySelectorAll('details').forEach(function(el){
+        el.addEventListener('toggle', function(){
+            var c = this.querySelector('.faq-chev');
+            if(c) c.style.transform = this.open ? 'rotate(180deg)' : '';
+        });
+    });
+
+    var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.r').forEach(function(el){ obs.observe(el); });
+</script>
+
+</body>
+</html>
