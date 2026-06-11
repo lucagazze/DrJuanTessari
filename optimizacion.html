@@ -495,6 +495,14 @@
                 <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">videocam</span>
                 Agendá tu Videoconsulta
             </button>
+
+            <div style="margin-top:48px;display:inline-flex;flex-direction:column;align-items:center;gap:10px;">
+                <p style="font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.04em;margin:0;">Gestión y adquisición de tu tratamiento personalizado.</p>
+                <button class="btn" style="background:#25D366;color:#fff;font-size:1rem;font-weight:700;padding:13px 36px;letter-spacing:.01em;box-shadow:0 4px 18px rgba(37,211,102,.35);" onclick="sendWAConcierge()">
+                    <span class="material-symbols-outlined" style="font-size:18px;" aria-hidden="true">chat</span>
+                    Concierge
+                </button>
+            </div>
         </div>
     </section>
 
@@ -528,7 +536,11 @@
 
     function sendWA() {
         try{ fbq('track','Contact'); }catch(e){}
-        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20quiero%20consultar%20sobre%20optimizaci%C3%B3n%20biol%C3%B3gica.','_blank'); }, 300);
+        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20quiero%20consultar%20sobre%20optimizaci%C3%B3n%20metab%C3%B3lica.','_blank'); }, 300);
+    }
+    function sendWAConcierge() {
+        try{ fbq('trackCustom','click_concierge'); }catch(e){}
+        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20quiero%20gestionar%20la%20adquisici%C3%B3n%20de%20mi%20tratamiento%20personalizado.','_blank'); }, 300);
     }
 
     document.querySelectorAll('details').forEach(function(el){
