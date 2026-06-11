@@ -181,8 +181,7 @@
         /* ── About split ── */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
         @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
-        .about-photo { width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: var(--r); display: block; box-shadow: 0 20px 48px rgba(0,0,0,.12); }
-        @media (max-width: 768px) { .about-photo { height: 300px; } }
+        .about-photo { width: 100%; height: auto; display: block; border-radius: var(--r); box-shadow: 0 20px 48px rgba(0,0,0,.12); }
         .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
         .chip { display: inline-flex; align-items: center; gap: 5px; background: rgba(37,99,235,.07); color: var(--blue); font-size: .72rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
         .chip .material-symbols-outlined { font-size: 12px; }
