@@ -292,6 +292,27 @@
             </a>
 
         </div>
+
+        <!-- Suplementos -->
+        <div style="max-width:1000px;margin:16px auto 0;">
+            <div class="r" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+                <div style="display:flex;align-items:flex-start;gap:18px;flex:1;min-width:260px;">
+                    <div style="width:48px;height:48px;flex-shrink:0;background:rgba(255,255,255,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                        <span class="material-symbols-outlined" style="color:rgba(255,255,255,.7);font-size:22px;" aria-hidden="true">science</span>
+                    </div>
+                    <div>
+                        <p style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px;">Suplementos</p>
+                        <p style="font-family:'Merriweather',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px;">Formulaciones sugeridas por el Dr. Tessari</p>
+                        <p style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0;">Adquirí los suplementos recomendados en tu tratamiento. Un asesor te guía en la compra y gestión.</p>
+                    </div>
+                </div>
+                <button onclick="sendWASupl()" style="flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:.9rem;padding:12px 28px;border-radius:980px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">
+                    <span class="material-symbols-outlined" style="font-size:17px;" aria-hidden="true">chat</span>
+                    Suplementos
+                </button>
+            </div>
+        </div>
+
     </section>
 
     <!-- Stats -->
@@ -371,6 +392,10 @@
     function sendWA() {
         try{ fbq('track','Contact'); }catch(e){}
         setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari%2C%20tengo%20una%20consulta.','_blank'); }, 300);
+    }
+    function sendWASupl() {
+        try{ fbq('trackCustom','click_suplementos'); }catch(e){}
+        setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone=5491168125616&text=Hola%2C%20quiero%20consultar%20sobre%20los%20suplementos%20recomendados%20por%20el%20Dr.%20Tessari.','_blank'); }, 300);
     }
     var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); } });
