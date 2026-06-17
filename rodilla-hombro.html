@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="light" lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -132,7 +132,7 @@
             <a href="index.html" class="block">
                 <img src="logosinfondo.webp" alt="Dr. Juan Tessari" width="600" height="600" class="h-12 w-auto object-contain hover:opacity-80 transition-opacity scale-125 ml-2">
             </a>
-            <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
+            <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); sendWhatsAppEvent();" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
                 Agendar Cita
             </button>
         </div>
@@ -157,7 +157,7 @@
                 
                 <!-- Desktop Button (Restored Position) -->
                 <div class="hidden md:block mt-8">
-                     <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
+                     <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); sendWhatsAppEvent();" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg text-sm font-bold transition-all">
                         Agendar una Consulta
                     </button>
                 </div>
@@ -171,7 +171,7 @@
                 
                 <!-- Mobile Button Only -->
                 <div class="flex flex-col items-center w-full mt-8 mb-12 md:hidden gap-3">
-                    <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
+                    <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); sendWhatsAppEvent();" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
                         Agendar una Consulta
                     </button>
                 </div>
@@ -304,7 +304,7 @@
                             Elegí la sede más cercana o reservá una videoconsulta de forma rápida y sencilla.
                         </p>
 
-                        <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
+                        <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); sendWhatsAppEvent();" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
                         Solicitar un Turno
                     </button>
                     
@@ -470,7 +470,7 @@
                             ¿Estás listo para dar el primer paso?
                         </h2>
                         <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 w-full md:w-auto">
-                             <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); setTimeout(() => { window.location.href='formulario.html'; }, 300);" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
+                             <button onclick="event.preventDefault(); fbq('trackCustom', 'click_agendar'); sendWhatsAppEvent();" class="bg-primary text-white py-2.5 px-6 rounded-lg text-sm font-bold shadow-lg hover:bg-primary-dark transition-all uppercase tracking-wide">
                         Agendar una Consulta
                     </button>
                         </div>
@@ -525,9 +525,10 @@
       }
 
       setTimeout(function() {
-        window.open("https://api.whatsapp.com/send?phone=5491178990960&text=Hola%20Dr.%20Tessari,%20tengo%20una%20consulta.", "_blank");
+        window.open("https://api.whatsapp.com/send?phone=5491178990960&text=Hola%2C%20Laura!%20Tengo%20una%20consulta%20sobre%20la%20atenci%C3%B3n%20del%20Dr%20Tessari%20en%20Hombro%20y%20Rodilla.", "_blank");
       }, 700);
     }
     </script>
 </body>
 </html>
+
