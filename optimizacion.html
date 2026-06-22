@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -154,10 +154,12 @@
         /* ── Testimonials ── */
         .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
         .test-card { display: flex; flex-direction: column; }
-        .test-video { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 18px 18px 0 0; border-bottom: none; aspect-ratio: 9/16; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.2); }
+        /* Ocultado temporalmente hasta tener los videos */
+        .test-video { display: none; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 18px 18px 0 0; border-bottom: none; aspect-ratio: 9/16; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.2); }
         .test-video .material-symbols-outlined { font-size: 2.8rem; }
         .test-video p { font-size: .75rem; font-weight: 500; }
-        .test-info { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-top: none; border-radius: 0 0 18px 18px; padding: 18px; }
+        /* Modificado border y border-radius mientras no estén los videos */
+        .test-info { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 18px; padding: 18px; }
         .test-name { font-weight: 700; color: #fff; font-size: .85rem; margin-bottom: 3px; }
         .test-tag { font-size: .72rem; color: #60a5fa; font-weight: 600; margin-bottom: 10px; }
         .test-text { font-size: .78rem; color: rgba(255,255,255,.38); line-height: 1.6; }
