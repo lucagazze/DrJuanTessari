@@ -476,11 +476,13 @@
             (function(){
                 var v = document.getElementById('tv');
                 var btn = document.getElementById('tv-btn');
+                var autoTimer;
                 v.addEventListener('canplay', function(){
                     v.play();
-                    setTimeout(function(){ v.pause(); }, 5000);
+                    autoTimer = setTimeout(function(){ v.pause(); }, 5000);
                 }, {once: true});
                 function tvPlay(){
+                    clearTimeout(autoTimer);
                     btn.style.display = 'none';
                     v.muted = false;
                     v.controls = true;
